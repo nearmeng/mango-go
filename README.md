@@ -1,1 +1,1 @@
-# mango-gohttps://github.com/nearmeng/mango-go
+# mango-go
