@@ -1,0 +1,9 @@
+[svrinfo]
+serverid="101.0.0.1"
+
+[Plugin]
+[[Plugin.Log.bingologger]]
+tag="default"
+path="./log/stateless.log"
+filesplitmb=100000
+level=0

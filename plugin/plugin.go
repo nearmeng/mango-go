@@ -14,7 +14,7 @@ type PluginConfig struct {
 type PluginFactory interface {
 	Type() string
 	Name() string
-	SetUp(map[string]interface{}) (interface{}, error)
+	Setup(map[string]interface{}) (interface{}, error)
 	Destroy(interface{}) error
 	Reload(interface{}, map[string]interface{}) error
 }
@@ -29,7 +29,10 @@ func RegisterPluginFactory(f PluginFactory) {
 	_pluginFactoryLock.Lock()
 	defer _pluginFactoryLock.Unlock()
 
-	_pluginFactoryMgr[fmt.Sprintf("%s_%s", f.Type(), f.Name())] = f
+	key := constructPluginKey(f.Type(), f.Name())
+	_pluginFactoryMgr[key] = f
+
+	fmt.Printf("register plugin factory, key %s\n", key)
 }
 
 func GetPluginInst(typ string, name string) interface{} {
@@ -66,7 +69,9 @@ func InitPlugin(v *viper.Viper) error {
 				return fmt.Errorf("get plugin factory failed, type %s name %s", t, n)
 			}
 
-			plugin, error := f.SetUp(c)
+			fmt.Printf("init plugin %s %s\n", t, n)
+
+			plugin, error := f.Setup(c)
 			if error != nil {
 				return fmt.Errorf("plugin setup failed, type %s name %s", t, n)
 			}
