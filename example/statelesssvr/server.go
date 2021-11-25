@@ -7,10 +7,6 @@ import (
 	"github.com/nearmeng/mango-go/server_base/app"
 )
 
-type tiger struct {
-	value int
-}
-
 func main() {
 
 	server := app.NewServerApp("stateless_svr")
