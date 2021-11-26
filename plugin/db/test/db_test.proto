@@ -1,0 +1,261 @@
+syntax = "proto3";
+package bingo;
+option go_package = "bingo/db/test";
+
+import "tcaplusservice.optionv1.proto";
+
+message STAcntHeadInfo
+{
+    uint32 HeadType = 1; // COM_HEAD_TYPE可能是英雄ID或者微信QQ等平台的第三方头像
+    uint32 HeadID = 2;
+    string PlatformHeadURL = 3; // 第三方平台的头像的url链接
+}
+
+
+// 玩家身上的基础信息
+message STAcntBaseInfo
+{
+    string OpenID = 1; // OpenID
+    uint32 Level = 2; // 成就等级(原账号等级)
+    uint32 Exp = 3; // 成就经验(原账号经验)
+    string Name = 4; // 角色名
+    uint32 IsOnline = 5; // 是否在线
+    uint32 GameSvrEntity = 6; // GamesvrEntity
+    uint32 LastLoginTime = 7; // 最近登录时间
+    uint32 LastLoginOutTime = 8; // 最近登出时间
+    uint64 TotalDurationTime = 9;
+    uint32 ClientIP = 10;
+    uint32 InitHeroCfgID = 11; // 初始英雄ID
+    STAcntHeadInfo HeadInfo = 12; // 玩家头像信息
+    uint32 TotalLoginDay = 13; // 注册至今的登录天数
+    uint32 RegisterTime = 14; // 玩家注册时间
+    uint32 LastUpdFiveChkTime = 15; // 上一次跨天5点检查时间
+    uint32 LastUpdWeekChkTime = 16; // 上一次跨周检查时间
+}
+
+message STChangeName
+{
+    uint32 ChgNameCDTime = 1; // 下次可改名的时间,初始0
+    uint32 ChgNameFreeCnt = 2; // 改名免费次数,注册时设置为1
+}
+
+message STGlobalMail
+{
+    uint32 MaxCfgGlobalMailID = 1; //已接收的最大全局邮件ID, 这里指的配置档的, 后面还会有IDIP的全局邮件
+    uint32 LastOperCfgGlobalMailTime = 2; //上一次处理全局邮件时间, 这里指的配置档的, 后面还会有IDIP的全局邮件
+}
+
+// 玩家身上的杂项数据
+message STMiscData
+{
+    STChangeName ChgNameInfo = 1;// 改名信息
+    uint32 LastUpdateFiveTime = 3; // 上一次跨天5点更新时间
+    uint32 LastUpdateZeroTime = 4; // 上一次跨天0点更新时间
+    uint32 IsNewPlayer = 5; // 是否是新玩家
+    uint32 LastCheckLoginDayTime = 6; // 上一次检查登录天数是否增加的时间
+    uint32 LastUpdateWeekTime = 7; // 上一次跨周更新时间
+    STGlobalMail GlobalMail = 8; // 全局邮件
+    int32 LatestReadPrivateMsgIndex = 9; // 最近已读私聊消息序号
+}
+
+message STAcntCard
+{
+    uint32 CardID = 1; // 卡牌ID
+    uint32 GetTime = 2; // 获取时间
+    uint32 CurLevel = 3; // 当前等级
+    uint32 CardNum = 4; // 卡牌数量
+}
+
+message STCardDeckDetail
+{ 
+    map<uint32, uint32> DeckCardMap = 1;
+}
+
+message STCardDeck
+{
+    uint32 Type = 1;
+    uint32 Icon = 2;
+    string Name = 3;
+    STCardDeckDetail Detail = 4;
+}
+
+message STAcntCardData
+{
+    map<uint32, STAcntCard> CardMap = 1;
+    uint32 CardOptFlag = 2; // 操作标志位
+    map<uint32, STCardDeck> DeckMap = 3;
+}
+
+message STPlayerCardInfo
+{
+    int32 ID = 1;
+    uint32 Level = 2;
+    uint32 bHaveUltimate = 3;
+}
+
+message STPlayerInfo
+{
+    int32 ActorCamp = 1;
+    uint64 PlayerID = 2;
+    uint32 ObjId = 3;
+    repeated STPlayerCardInfo OtherCardInfos = 4;
+    repeated STPlayerCardInfo HeroCardInfos = 5;
+}
+
+message STPVPGameBriefRank1V1 {
+    STPlayerInfo PlayerInfo = 1;    //使用gamecore数据，里面有部分浪费，后续和客户端统一修改
+    uint32 Elo = 2;
+}
+
+
+// Rank1V1需要的数据
+message STRank1V1{
+    // brief 白模阶段客户端需要存储的卡组, 有正式系统后删除.
+    STPVPGameBriefRank1V1 Brief = 1;
+    uint32 Elo = 2; // 当前Elo分
+    int32 Wins = 3; // 连胜场次
+    uint32 BattleIDSettled = 4; // 上次结算场次,防止重复结算
+}
+
+
+message STItemPropEx
+{
+    uint32 AddUpdTime = 1;  // 添加或更新时间
+}
+
+message STItem
+{
+    uint32 ID = 1;          // 物品ID
+    uint32 Num = 2;     // 堆叠数量
+    oneof Detail {
+        STItemPropEx PropExData = 3;
+    }
+}
+
+// 物品数据 道具、装备等..
+message STAcntItemData
+{
+    // key: ItemType << 48 + TimeSec << 16 + Seq
+    map<uint64, STItem> ItemMap = 1;
+}
+
+message STAcntMoney
+{
+    uint32 Cnt = 1;
+}
+
+message STAcntMoneyData
+{
+    repeated STAcntMoney MoneyList = 1;
+}
+
+message STAcntMusicData
+{
+    uint32 RoleID = 1; // 战斗角色ID
+    uint32 ELOScore = 2; // 分数
+    uint32 WinStreakCount = 3; // 连胜次数
+}
+
+message STSeasonGameInfo
+{
+    uint32 GameType = 1; // 玩法ID
+    uint32 Score    = 4; // 游戏分数
+}
+
+message STSeasonRankInfo
+{
+    uint32 RankID   = 1; // 段位ID
+    uint32 LevelID  = 2; // 阶数
+    bool   HasAward = 3; // 段位奖励是否已领取
+}
+
+message STSeasonData
+{
+    uint32 SeasonID = 1; // 当前赛季ID
+    repeated STSeasonGameInfo GameInfoList = 2; // 当前玩法信息列表
+    repeated STSeasonRankInfo RankInfoList = 3; // 当前段位信息列表
+}
+
+message STLimit
+{
+    uint32 CurCnt = 1;      // 当前数量
+}
+
+message STLimitData
+{
+    map<uint32, STLimit> LimitMap = 1;
+}
+
+// 玩家信息主表
+message TBAcntInfo
+{
+    option(tcaplusservice.tcaplus_primary_key) = "Uid";
+
+    uint64 Uid = 1; // Uid
+    STAcntBaseInfo BaseInfo = 2; // 玩家基本信息
+    STMiscData MiscData = 3; // 杂项数据
+    STAcntCardData CardData = 5; // 卡牌数据
+    STRank1V1 Rank1V1 = 6;  // Rank1V1的数据
+    STAcntItemData ItemData = 7; // 物品数据
+    STAcntMoneyData MoneyData = 8; // 货币数据
+    STAcntMusicData MusicData = 9; // music数据
+    STSeasonData SeasonData = 10; // 赛季数据
+    STLimitData LimitData = 11; // 限制数据
+}
+
+// 玩家角色名称表
+message TBAcntName
+{
+    option(tcaplusservice.tcaplus_primary_key) = "UserName";
+
+    string UserName = 1; // 名字
+    uint64 DBSeq = 2; // 名字使用次数
+}
+
+message TBOnlineInfoList {
+    option(tcaplusservice.tcaplus_primary_key) = "openid,tconndid,timekey";
+    option(tcaplusservice.tcaplus_customattr) = "TableType=LIST;ListNum=1900";
+
+    int32 openid = 1; //QQ Uin
+    int32 tconndid = 2;
+    string timekey = 3;
+    string gamesvrid = 4;
+    int32 logintime = 5 ;
+}
+
+// 这是测试其他db， 非tcaplus用的， 不要删除.
+
+message TBTest
+{
+    option(tcaplusservice.tcaplus_primary_key) = "Uid";
+
+    uint64 Uid = 1; // Uid
+    STAcntBaseInfo BaseInfo = 2; // 玩家基本信息
+    STRank1V1 Rank1V1 = 6;  // Rank1V1的数据
+    int64 IncTest1 = 107;
+    uint64 IncTest2 = 108;
+    float FloatTest1 = 110;
+    double FloatTest2 = 111;
+    bool boolTest1 = 112;
+    string TestStr = 113;
+    repeated int32 IntArray = 114;    
+    map<int64,string> IntStringMap = 115;
+}
+
+// 测试多key表
+message TBGuildRoom
+{
+    option(tcaplusservice.tcaplus_primary_key) = "RoomId,GuildName";
+
+    uint64 RoomId = 1; 
+    string GuildName = 2; 
+    STAcntBaseInfo BaseName = 3; // 玩家基本信息
+    STRank1V1 Rank1V1 = 6;  // Rank1V1的数据
+    int64 IncTest1 = 107;
+    uint64 IncTest2 = 108;
+    float FloatTest1 = 110;
+    double FloatTest2 = 111;
+    bool boolTest1 = 112;
+    string TestStr = 113;
+    repeated int32 IntArray = 114;
+}
