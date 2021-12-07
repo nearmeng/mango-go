@@ -1,0 +1,42 @@
+serverid: "101.0.0.1"
+
+plugin:
+  log:
+    bingologger:
+      tag: "default"
+      path: "./log/stateless.log"
+      filesplitmb: 100000
+      level: 0
+
+  mq:
+    #kafka:
+    #  client_config:
+    #    url: "9.134.145.178:9092"
+    #    log_path: "./log/kafka.log"
+
+    #  reader_config:
+    #    -
+    #      topic: 
+    #       - "test_kafka"
+    #      reader_name: "reader1"
+    #      offset_reset: "earliest"
+    # 
+    #  writer_config:
+    #    -
+    #      topic: "test_kafka"
+    #      writer_name: "writer1"
+    pulsar:
+      client_config:
+        url: "pulsar://9.134.145.178:6650"
+        log_path: "./log/pulsar.log"
+
+      reader_config:
+        -
+          topic: 
+           - "test_pulsar"
+          reader_name: "reader1"
+     
+      writer_config:
+        -
+          topic: "test_pulsar"
+          writer_name: "writer1"

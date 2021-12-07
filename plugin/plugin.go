@@ -7,14 +7,12 @@ import (
 	"github.com/spf13/viper"
 )
 
-type PluginConfig struct {
-	Plugin map[string]map[string]map[string]interface{} `toml:"plugin"`
-}
+type PluginConfig map[string]map[string]interface{}
 
 type PluginFactory interface {
 	Type() string
 	Name() string
-	Setup(map[string]interface{}) (interface{}, error)
+	Setup(*viper.Viper) (interface{}, error)
 	Destroy(interface{}) error
 	Reload(interface{}, map[string]interface{}) error
 }
@@ -43,11 +41,13 @@ func GetPluginInst(typ string, name string) interface{} {
 		return nil
 	}
 
-	return &plugin
+	return plugin
 }
 
 func registerPluginInst(key string, plugin interface{}) {
 	_pluginMgr[key] = plugin
+
+	fmt.Printf("register plugin inst, key %s\n", key)
 }
 
 func constructPluginKey(typ string, name string) string {
@@ -62,8 +62,8 @@ func InitPlugin(v *viper.Viper) error {
 		return fmt.Errorf("unmarshal failed for %w", err)
 	}
 
-	for t, s := range cfg.Plugin {
-		for n, c := range s {
+	for t, s := range cfg {
+		for n, _ := range s {
 			f := getPluginFactory(t, n)
 			if f == nil {
 				return fmt.Errorf("get plugin factory failed, type %s name %s", t, n)
@@ -71,7 +71,7 @@ func InitPlugin(v *viper.Viper) error {
 
 			fmt.Printf("init plugin %s %s\n", t, n)
 
-			plugin, error := f.Setup(c)
+			plugin, error := f.Setup(v.Sub(t).Sub(n))
 			if error != nil {
 				return fmt.Errorf("plugin setup failed, type %s name %s", t, n)
 			}

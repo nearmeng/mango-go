@@ -3,6 +3,7 @@ package kafka
 import (
 	"context"
 	"errors"
+	"fmt"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/nearmeng/mango-go/plugin/log"
@@ -22,17 +23,20 @@ func (r *kafkaReader) ReadMessage(ctx context.Context) (mq.Message, error) {
 	go func() {
 		defer close(done)
 		for {
-			m, err := r.consumer.ReadMessage(0)
-			kafkaErr := err.(kafka.Error)
-			// 不是超时错误
-			if kafkaErr.Code() != kafka.ErrTimedOut {
-				done <- err
-				return
-			}
-			if m != nil {
+			m, err := r.consumer.ReadMessage(-1)
+			if err == nil {
+				fmt.Printf("Message on %s: %s\n", m.TopicPartition, string(m.Value))
 				done <- m
 				return
+			} else {
+				kafkaErr := err.(kafka.Error)
+				// 不是超时错误
+				if kafkaErr.Code() != kafka.ErrTimedOut {
+					done <- err
+					return
+				}
 			}
+
 			select {
 			case <-ctx.Done():
 				done <- errors.New("operate time out")
@@ -109,7 +113,7 @@ func (r *kafkaReader) Ack(ctx context.Context, messages ...mq.Message) {
 		partitions[i] = kafka.TopicPartition{
 			Topic:     &topic,
 			Partition: int32(msg.Partition()),
-			Offset:    kafka.Offset(offset),
+			Offset:    kafka.Offset(offset) + 1,
 		}
 	}
 	if !r.config.AutoCommit {
@@ -118,9 +122,10 @@ func (r *kafkaReader) Ack(ctx context.Context, messages ...mq.Message) {
 		if err != nil {
 			log.Error("fail to commit ,err:%v", err)
 		}
+
 	}
 	go r.invokeAfterInterceptor(ctx, messages...)
 }
 func (r *kafkaReader) Close() {
-	// panic("implement me")
+	r.consumer.Close()
 }

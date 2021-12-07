@@ -11,6 +11,7 @@ type Client interface {
 	NewWriter(ctx context.Context, config *WriterConfig) (Writer, error)
 	TopicPartitions(topic string) ([]string, error)
 	ResourceManager() ResourceManager
+
 	Close()
 }
 
@@ -44,11 +45,6 @@ type Reader interface {
 	RemoveReaderInterceptor(interceptor ReaderInterceptor)
 	Ack(ctx context.Context, messages ...Message)
 	Close()
-}
-
-// ClientCreator 开发者接入框架需要实现的接口
-type ClientCreator interface {
-	NewClient(context.Context, *ClientConfig) (Client, error)
 }
 
 // CallBackFunc 异步发送后调用的回调函数

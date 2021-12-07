@@ -33,6 +33,7 @@ func NewClient(ctx context.Context, clientConfig *mq.ClientConfig) (mq.Client, e
 	}
 	llog := logrus.StandardLogger()
 	llog.SetOutput(lFile)
+	llog.SetLevel(logrus.DebugLevel)
 	pulsarCli, err := pulsar.NewClient(pulsar.ClientOptions{
 		URL:    fmt.Sprintf("%s", clientConfig.Url),
 		Logger: log2.NewLoggerWithLogrus(llog),

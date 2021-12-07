@@ -2,6 +2,7 @@ package kafka
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/nearmeng/mango-go/plugin/log"
@@ -24,7 +25,15 @@ func (p *kafkaClient) ResourceManager() mq.ResourceManager {
 }
 
 func (p *kafkaClient) NewReader(ctx context.Context, config *mq.ReaderConfig) (mq.Reader, error) {
-	log.Info("init reader...")
+	a := withClientConfig(&kafka.ConfigMap{}, p.clientConfig)
+	b := withReaderConfig(a, config)
+
+	for k, v := range *b {
+		fmt.Printf("reader config, key: %s value: %s\n", k, v)
+	}
+
+	fmt.Printf("topic is %s\n", config.Topic[0])
+
 	consumer, err := kafka.NewConsumer(withReaderConfig(withClientConfig(&kafka.ConfigMap{}, p.clientConfig), config))
 	if err != nil {
 		log.Error("fail to creat consumer,err:%v", err)
@@ -39,6 +48,14 @@ func (p *kafkaClient) NewReader(ctx context.Context, config *mq.ReaderConfig) (m
 }
 
 func (p *kafkaClient) NewWriter(ctx context.Context, config *mq.WriterConfig) (mq.Writer, error) {
+
+	a := withClientConfig(&kafka.ConfigMap{}, p.clientConfig)
+	b := withWriterConfig(a, config)
+
+	for k, v := range *b {
+		fmt.Printf("writer config, key: %s value: %s\n", k, v)
+	}
+
 	producer, err := kafka.NewProducer(withWriterConfig(withClientConfig(&kafka.ConfigMap{}, p.clientConfig), config))
 	if err != nil {
 		log.Error("fail to create producer, err:%v", err)

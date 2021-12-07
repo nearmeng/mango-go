@@ -22,6 +22,7 @@ import (
 	"github.com/mitchellh/mapstructure"
 	"github.com/nearmeng/mango-go/plugin"
 	"github.com/nearmeng/mango-go/plugin/log"
+	"github.com/spf13/viper"
 )
 
 func init() {
@@ -52,9 +53,12 @@ func (f *factory) Name() string {
 }
 
 // Setup create logger.
-func (f *factory) Setup(c map[string]interface{}) (interface{}, error) {
+func (f *factory) Setup(v *viper.Viper) (interface{}, error) {
 	var cfg LogCfg
-	if err := mapstructure.Decode(c, &cfg); err != nil {
+
+	fmt.Printf("log_path is %s\n", v.GetString("path"))
+	//if err := mapstructure.Decode(c, &cfg); err != nil {
+	if err := v.Unmarshal(&cfg); err != nil {
 		return nil, err
 	}
 

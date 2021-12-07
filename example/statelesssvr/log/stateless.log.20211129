@@ -1,0 +1,165 @@
+[2021-11-29 14:53:56.462] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:00:02.319] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:00:02.319] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:00:02.319] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:00:02.319] [INFO] [module/module.go:21] test module uninit
+[2021-11-29 15:00:02.319] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-29 15:14:40.839] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:14:40.839] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:14:40.839] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:16:32.173] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:16:32.173] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:16:32.173] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:17:34.608] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:17:34.608] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:17:34.608] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:17:34.608] [INFO] [module/module.go:21] test module uninit
+[2021-11-29 15:17:34.608] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-29 15:18:07.497] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:18:07.497] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:18:07.497] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:18:07.497] [INFO] [module/module.go:21] test module uninit
+[2021-11-29 15:18:07.497] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-29 15:18:31.368] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:18:31.369] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:18:31.369] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:20:05.058] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:20:05.058] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:20:05.058] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:21:00.557] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:21:00.557] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:21:00.557] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:28:09.298] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:28:09.298] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:28:09.298] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:28:54.278] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:28:54.278] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:28:54.278] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:29:31.793] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:29:31.793] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:29:31.793] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:30:35.024] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:30:35.024] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:30:35.024] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:31:22.781] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:31:22.781] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:31:22.781] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:32:38.538] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:32:38.539] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:32:38.539] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:32:58.744] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:32:58.744] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:32:58.744] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 15:37:03.536] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 15:37:03.536] [INFO] [module/module.go:15] test module init
+[2021-11-29 15:37:03.536] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 16:38:45.619] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 16:38:45.619] [INFO] [module/module.go:15] test module init
+[2021-11-29 16:38:45.619] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 16:39:14.770] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 16:39:14.770] [INFO] [module/module.go:15] test module init
+[2021-11-29 16:39:14.770] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 16:39:33.540] [INFO] [bingologger/bingologger.go:66] Init log path=./log/stateless.log, level=0
+[2021-11-29 16:39:33.540] [INFO] [module/module.go:15] test module init
+[2021-11-29 16:39:33.540] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 17:12:27.077] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:12:27.077] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:12:27.077] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 17:17:51.109] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:17:51.110] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:17:51.110] [INFO] [app/app.go:91] server stateless_svr 101.0.0.1 init success
+[2021-11-29 17:36:30.702] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:36:30.703] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:36:30.703] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 17:50:03.519] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:50:03.519] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:50:03.519] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 17:51:26.615] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:51:26.615] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:51:26.615] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 17:53:42.442] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:53:42.442] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:53:42.442] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 17:55:24.841] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:55:24.841] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:55:24.841] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 17:57:58.717] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:57:58.717] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:57:58.717] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 17:59:41.222] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 17:59:41.222] [INFO] [module/module.go:15] test module init
+[2021-11-29 17:59:41.222] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 18:06:26.741] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 18:06:26.741] [INFO] [module/module.go:15] test module init
+[2021-11-29 18:06:26.741] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 18:06:59.277] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 18:06:59.277] [INFO] [module/module.go:15] test module init
+[2021-11-29 18:06:59.277] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 18:11:10.689] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 18:11:10.689] [INFO] [module/module.go:15] test module init
+[2021-11-29 18:11:10.689] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 18:11:43.465] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 18:11:43.466] [INFO] [kafka/client.go:27] init reader...
+[2021-11-29 18:11:43.467] [INFO] [kafka/client.go:27] init reader...
+[2021-11-29 18:11:43.471] [INFO] [module/module.go:15] test module init
+[2021-11-29 18:11:43.471] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:09:07.580] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:09:07.580] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:09:07.580] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:16:37.236] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:16:37.236] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:16:37.236] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:30:07.003] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:30:07.003] [INFO] [kafka/client.go:27] init reader...
+[2021-11-29 19:30:07.004] [INFO] [kafka/client.go:27] init reader...
+[2021-11-29 19:30:07.011] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:30:07.011] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:30:52.447] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:30:52.447] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:30:52.447] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:39:34.003] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:39:34.003] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:39:34.004] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:39:34.012] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:39:34.012] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:40:28.268] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:40:28.269] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:40:28.269] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:48:33.175] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:48:33.175] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:48:33.175] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:51:05.763] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:51:05.764] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:51:05.764] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:51:05.769] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:51:05.769] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:51:59.860] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:51:59.860] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:51:59.860] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:53:22.435] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:53:22.435] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:53:22.435] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:54:01.667] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:54:01.667] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:54:01.668] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:54:01.675] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:54:01.675] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:54:59.493] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:54:59.494] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:54:59.495] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:54:59.501] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:54:59.501] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 19:56:00.206] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 19:56:00.206] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:56:00.207] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 19:56:00.211] [INFO] [module/module.go:15] test module init
+[2021-11-29 19:56:00.211] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 20:08:08.088] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 20:08:08.088] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 20:08:08.089] [INFO] [kafka/client.go:28] init reader...
+[2021-11-29 20:08:08.094] [INFO] [module/module.go:15] test module init
+[2021-11-29 20:08:08.094] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-29 20:08:35.041] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-29 20:08:35.042] [INFO] [module/module.go:15] test module init
+[2021-11-29 20:08:35.042] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 09:53:57.390] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0

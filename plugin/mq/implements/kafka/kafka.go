@@ -2,6 +2,7 @@ package kafka
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/nearmeng/mango-go/plugin/mq"
 )
@@ -11,8 +12,8 @@ type KafkaIns struct {
 	mqClient  mq.Client
 	mqReactor mq.Reactor
 
-	mqReader mq.Reader
-	mqWriter mq.Writer
+	mqReader map[string]mq.Reader
+	mqWriter map[string]mq.Writer
 }
 
 func NewKafka(conf *mq.MQConfig) (*KafkaIns, error) {
@@ -22,33 +23,50 @@ func NewKafka(conf *mq.MQConfig) (*KafkaIns, error) {
 		mqConfig:  conf,
 		mqClient:  nil,
 		mqReactor: nil,
+
+		mqReader: make(map[string]mq.Reader),
+		mqWriter: make(map[string]mq.Writer),
 	}
 
-	client, err := NewClient(ctx, conf.ClientConfig)
+	client, err := NewClient(ctx, &conf.ClientConfig)
 	if err != nil {
 		return nil, err
 	}
 
 	k.mqClient = client
 
-	reactor, err := NewReactor(ctx, conf.ReactorConfig)
+	reactor, err := NewReactor(ctx, &conf.ReactorConfig)
 	if err != nil {
 		return nil, err
 	}
 
 	k.mqReactor = reactor
 
-	reader, err := k.mqClient.NewReader(ctx, conf.ReaderConfig)
-	if err != nil {
-		return nil, err
-	}
-	k.mqReader = reader
+	for _, readerConf := range conf.ReaderConfig {
 
-	writer, err := k.mqClient.NewWriter(ctx, conf.WriterConfig)
-	if err != nil {
-		return nil, err
+		fmt.Printf("reader conf is %v\n", readerConf)
+		reader, err := k.mqClient.NewReader(ctx, &readerConf)
+		if err != nil {
+			return nil, err
+		}
+
+		k.mqReader[readerConf.ReaderName] = reader
+
+		fmt.Printf("kafka new reader %s\n", readerConf.ReaderName)
 	}
-	k.mqWriter = writer
+
+	for _, writerConf := range conf.WriterConfig {
+
+		fmt.Printf("writer conf is %v\n", writerConf)
+		writer, err := k.mqClient.NewWriter(ctx, &writerConf)
+		if err != nil {
+			return nil, err
+		}
+
+		fmt.Printf("kafka new writer %s\n", writerConf.WriterName)
+
+		k.mqWriter[writerConf.WriterName] = writer
+	}
 
 	return k, nil
 }
@@ -57,12 +75,12 @@ func (k *KafkaIns) SetConfig(conf *mq.MQConfig) {
 	k.mqConfig = conf
 }
 
-func (k *KafkaIns) GetReader() mq.Reader {
-	return k.mqReader
+func (k *KafkaIns) GetReader(name string) mq.Reader {
+	return k.mqReader[name]
 }
 
-func (k *KafkaIns) GetWriter() mq.Writer {
-	return k.mqWriter
+func (k *KafkaIns) GetWriter(name string) mq.Writer {
+	return k.mqWriter[name]
 }
 
 func (k *KafkaIns) GetClient() mq.Client {

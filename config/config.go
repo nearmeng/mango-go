@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	_defaultConfPath = "./conf/server.toml"
+	_defaultConfPath = "./conf/server.yaml"
 )
 
 type configData struct {
@@ -51,7 +51,7 @@ func loadConfig() error {
 	}
 
 	v.SetConfigFile(_config.cfgFilePath)
-	v.SetConfigType("toml")
+	v.SetConfigType("yaml")
 
 	err := v.ReadInConfig()
 	if err != nil {

@@ -34,6 +34,8 @@ func withReaderConfig(config *kafka.ConfigMap, readerConfig *mq.ReaderConfig) *k
 	if config != nil {
 		_ = config.SetKey("enable.auto.commit", readerConfig.AutoCommit)
 		_ = config.SetKey("group.id", readerConfig.ReaderName)
+		_ = config.SetKey("session.timeout.ms", 6000)
+		_ = config.SetKey("heartbeat.interval.ms", 2000)
 		if readerConfig.OffsetReset != "" {
 			_ = config.SetKey("auto.offset.reset", readerConfig.OffsetReset)
 		}

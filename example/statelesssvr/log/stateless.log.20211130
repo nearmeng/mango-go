@@ -1,0 +1,428 @@
+[2021-11-30 09:53:57.390] [INFO] [kafka/client.go:28] init reader...
+[2021-11-30 09:53:57.391] [INFO] [kafka/client.go:28] init reader...
+[2021-11-30 09:53:57.395] [INFO] [module/module.go:15] test module init
+[2021-11-30 09:53:57.395] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 09:58:52.227] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 09:58:52.227] [INFO] [kafka/client.go:28] init reader...
+[2021-11-30 09:58:52.228] [INFO] [kafka/client.go:28] init reader...
+[2021-11-30 09:58:52.233] [INFO] [module/module.go:15] test module init
+[2021-11-30 09:58:52.233] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:23:00.983] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 10:23:00.983] [INFO] [module/module.go:15] test module init
+[2021-11-30 10:23:00.983] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:23:38.190] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 10:23:38.190] [INFO] [module/module.go:15] test module init
+[2021-11-30 10:23:38.190] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:39:11.956] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 10:39:11.957] [INFO] [module/module.go:15] test module init
+[2021-11-30 10:39:11.957] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:39:11.965] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 10:39:11.965] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 10:39:11.965] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 10:45:11.884] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 10:45:11.889] [INFO] [module/module.go:15] test module init
+[2021-11-30 10:45:11.890] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:45:11.896] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 10:45:11.896] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 10:45:11.896] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 10:50:26.591] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 10:50:26.596] [INFO] [module/module.go:15] test module init
+[2021-11-30 10:50:26.596] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:50:26.604] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 10:50:26.604] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 10:50:26.604] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 10:57:15.257] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 10:57:15.264] [INFO] [module/module.go:15] test module init
+[2021-11-30 10:57:15.264] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:57:15.270] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 10:57:15.270] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 10:57:15.270] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 10:59:33.768] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 10:59:33.768] [INFO] [module/module.go:15] test module init
+[2021-11-30 10:59:33.768] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 10:59:33.774] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 10:59:33.775] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 10:59:33.775] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 11:00:28.647] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 11:00:28.655] [INFO] [module/module.go:15] test module init
+[2021-11-30 11:00:28.655] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 11:00:28.662] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 11:00:28.662] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 11:00:28.662] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 11:00:28.762] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 11:00:28.762] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 12:11:20.792] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 12:11:20.797] [INFO] [module/module.go:15] test module init
+[2021-11-30 12:11:20.798] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 12:11:20.804] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 12:11:20.805] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 12:11:20.805] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 12:11:20.905] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 12:11:20.905] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 12:11:29.773] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 12:11:29.773] [INFO] [module/module.go:15] test module init
+[2021-11-30 12:11:29.773] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 12:11:29.779] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 12:11:29.779] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 12:11:29.779] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 12:12:05.805] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 12:12:05.805] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 12:12:26.596] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 12:12:26.600] [INFO] [module/module.go:15] test module init
+[2021-11-30 12:12:26.600] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 12:12:26.608] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 12:12:26.608] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 12:12:26.608] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 12:19:08.683] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 12:19:08.683] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 12:52:07.326] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 12:52:07.332] [INFO] [module/module.go:15] test module init
+[2021-11-30 12:52:07.332] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 12:52:07.338] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 12:52:07.338] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 12:52:07.338] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 12:57:07.449] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 12:57:07.449] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 13:19:46.334] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 13:19:46.340] [INFO] [module/module.go:15] test module init
+[2021-11-30 13:19:46.340] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 13:19:46.347] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 13:19:46.347] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 13:19:46.347] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 13:24:49.459] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 13:24:49.459] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 13:27:34.202] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 13:27:34.202] [INFO] [module/module.go:15] test module init
+[2021-11-30 13:27:34.202] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 13:27:34.209] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 13:27:34.209] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 13:27:34.209] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 13:32:37.323] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 13:32:37.323] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 13:39:25.917] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 13:39:25.922] [INFO] [module/module.go:15] test module init
+[2021-11-30 13:39:25.922] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 13:39:25.929] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 13:39:25.929] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 13:39:25.929] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 13:41:08.683] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 13:41:08.688] [INFO] [module/module.go:15] test module init
+[2021-11-30 13:41:08.688] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 13:41:08.695] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 13:41:08.695] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 13:41:08.695] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 13:41:48.241] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 13:41:48.241] [INFO] [module/module.go:15] test module init
+[2021-11-30 13:41:48.241] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 13:41:48.248] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 13:41:48.248] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 13:41:48.248] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:00:41.350] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:00:41.350] [INFO] [module/module.go:15] test module init
+[2021-11-30 14:00:41.350] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:01:53.800] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:01:53.804] [INFO] [module/module.go:15] test module init
+[2021-11-30 14:01:53.805] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:01:53.912] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 14:01:53.912] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:02:02.406] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:02:02.407] [INFO] [module/module.go:15] test module init
+[2021-11-30 14:02:02.407] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:02:38.915] [INFO] [module/module.go:21] test module uninit
+[2021-11-30 14:02:38.915] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:02:45.129] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:02:45.129] [INFO] [module/module.go:15] test module init
+[2021-11-30 14:02:45.129] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:32:34.423] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:32:34.423] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:32:34.430] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:32:34.430] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:32:34.430] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:36:58.446] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:36:58.446] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:36:58.455] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:36:58.455] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:36:58.455] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:36:58.557] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:37:04.556] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:37:04.563] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:37:04.569] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:37:04.569] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:37:04.569] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:37:04.671] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:37:08.329] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:37:08.329] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:37:08.336] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:37:08.336] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:37:08.336] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:37:10.565] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:37:48.476] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:37:48.482] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:37:48.488] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:37:48.488] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:37:48.488] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:37:48.590] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:37:50.210] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:37:50.210] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:37:50.217] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:37:50.217] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:37:50.217] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:37:54.486] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:38:08.749] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:38:08.754] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:38:08.761] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:38:08.761] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:38:08.761] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:38:08.862] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:38:10.972] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:38:10.977] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:38:10.984] [DEBUG] [kafka/writer.go:159] wait to flush...,15000ms
+[2021-11-30 14:38:10.984] [DEBUG] [kafka/writer.go:61] invoke after interceptor, len: 0
+[2021-11-30 14:38:10.984] [DEBUG] [kafka/writer.go:36] close event loop..
+[2021-11-30 14:38:14.758] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:42:05.929] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:42:05.934] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:42:05.937] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:42:13.768] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:42:13.773] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:42:13.776] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:42:16.048] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:42:16.052] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:42:19.779] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:43:30.882] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:43:30.887] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:43:30.889] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:48:26.517] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:48:26.524] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:48:26.527] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:48:28.772] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:48:28.772] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:48:32.527] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:49:03.030] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:49:03.040] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:49:03.041] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:49:04.422] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:49:04.426] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:49:09.040] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:49:11.857] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:49:11.862] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:49:15.043] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:49:25.945] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:49:25.945] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:49:25.947] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:49:27.539] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:49:27.544] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:49:31.949] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:50:05.359] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:50:05.364] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:50:05.367] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:50:19.524] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:50:19.525] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:50:19.529] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:50:20.979] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:50:20.985] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:50:25.532] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:51:05.883] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:51:05.883] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:51:05.887] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:51:14.272] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:51:14.277] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:51:50.889] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:52:17.099] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:52:17.099] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:52:51.367] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:52:51.372] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:53:04.065] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:53:04.071] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:53:18.543] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:53:18.548] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:53:18.556] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:53:27.147] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:53:27.153] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:53:27.157] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:53:29.608] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:53:29.608] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:53:33.160] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:59:45.101] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:59:45.101] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:59:45.102] [DEBUG] [kafka/reader.go:120] commit offset 114 ~ 114
+[2021-11-30 14:59:45.103] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 14:59:48.002] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 14:59:48.007] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 14:59:51.107] [DEBUG] [kafka/reader.go:120] commit offset 114 ~ 114
+[2021-11-30 14:59:51.108] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:00:50.312] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:00:50.318] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:00:50.320] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:00:50.321] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:00:55.556] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:00:55.563] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:00:56.324] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:00:56.325] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:01:20.195] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:01:20.200] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:01:20.203] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:01:20.204] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:01:26.988] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:01:26.988] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:01:26.995] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:01:26.996] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:01:50.209] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:01:50.214] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:01:50.217] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:01:50.218] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:13:15.117] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:13:15.122] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:13:15.125] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:13:15.126] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:13:26.075] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:13:26.081] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:13:26.083] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:13:26.084] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:13:34.639] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:13:34.643] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:13:34.647] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:13:34.648] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:13:41.884] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:13:41.884] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:13:41.886] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:13:41.887] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:13:44.478] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:13:44.483] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:13:47.891] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:13:47.892] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:15:30.890] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:15:30.890] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:15:30.893] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:15:30.894] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:15:40.417] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:15:40.422] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:15:40.425] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:15:40.426] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:15:44.995] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:15:45.000] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:15:46.429] [DEBUG] [kafka/reader.go:121] commit offset 114 ~ 114
+[2021-11-30 15:15:46.430] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:19:14.903] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:19:14.903] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:19:14.906] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:19:38.179] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:19:38.179] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:19:38.182] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:21:52.342] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:21:52.342] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:21:52.345] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:22:01.286] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:22:01.287] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:22:01.290] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:26:36.943] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:26:36.943] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:26:37.051] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:26:55.563] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:26:55.573] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:26:55.576] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:26:57.408] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:26:57.412] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:26:57.418] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:26:58.530] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:26:58.530] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:26:58.536] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:26:59.412] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:26:59.418] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:26:59.421] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:00.160] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:00.160] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:00.165] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:00.861] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:00.861] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:00.866] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:01.492] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:01.492] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:01.495] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:02.093] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:02.099] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:02.104] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:02.672] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:02.672] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:02.675] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:03.260] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:03.260] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:03.265] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:03.930] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:03.930] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:03.934] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:04.777] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:04.777] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:04.780] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:05.562] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:05.562] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:05.566] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:06.312] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:06.312] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:06.316] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:07.043] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:07.047] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:07.052] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:07.792] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:07.792] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:07.796] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:27:08.552] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:27:08.559] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:27:08.563] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:28:07.502] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:28:07.502] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:28:07.510] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:28:13.606] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:28:13.606] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:28:13.611] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:28:15.367] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:28:15.367] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:28:15.373] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:28:43.731] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:28:43.731] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:28:43.734] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:29:11.539] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:29:11.546] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:29:21.549] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:29:26.730] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:29:26.730] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:29:36.733] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:29:53.592] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:29:53.597] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:29:53.598] [DEBUG] [kafka/reader.go:121] commit offset 120 ~ 120
+[2021-11-30 15:30:03.600] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:30:06.262] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:30:06.267] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:30:06.269] [DEBUG] [kafka/reader.go:121] commit offset 120 ~ 120
+[2021-11-30 15:30:16.270] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:30:52.451] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:30:52.451] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:30:52.454] [DEBUG] [kafka/reader.go:121] commit offset 120 ~ 120
+[2021-11-30 15:31:02.456] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:32:33.647] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:32:33.647] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:32:33.652] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:32:36.121] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:32:36.122] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:32:36.126] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:32:38.382] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:32:38.382] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:32:38.387] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:32:39.964] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:32:39.969] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:32:39.974] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:32:42.561] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:32:42.561] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:32:42.565] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:58:19.973] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:58:19.978] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:58:19.981] [DEBUG] [kafka/reader.go:121] commit offset 132 ~ 132
+[2021-11-30 15:58:29.982] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:58:36.805] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:58:36.805] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:58:36.808] [DEBUG] [kafka/reader.go:120] commit offset 133 ~ 133
+[2021-11-30 15:58:46.809] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-11-30 15:58:47.837] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-11-30 15:58:47.837] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-11-30 15:58:47.838] [DEBUG] [kafka/reader.go:120] commit offset 134 ~ 134
+[2021-12-02 10:42:39.060] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0

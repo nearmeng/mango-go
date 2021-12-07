@@ -10,6 +10,8 @@ import (
 	"github.com/nearmeng/mango-go/plugin/log"
 
 	_ "github.com/nearmeng/mango-go/plugin/log/bingologger"
+	_ "github.com/nearmeng/mango-go/plugin/mq/implements/kafka"
+	_ "github.com/nearmeng/mango-go/plugin/mq/implements/pulsar"
 )
 
 var (
@@ -62,7 +64,7 @@ func (s *serverApp) Init() error {
 	signal.RegisterSignalHandler([]os.Signal{syscall.SIGUSR2}, s.Reload)
 
 	//plugin
-	err = plugin.InitPlugin(conf)
+	err = plugin.InitPlugin(conf.Sub("plugin"))
 	if err != nil {
 		return err
 	}

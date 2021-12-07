@@ -10,8 +10,8 @@ type PulsarIns struct {
 	mqConfig *mq.MQConfig
 	mqClient mq.Client
 
-	mqReader mq.Reader
-	mqWriter mq.Writer
+	mqReader map[string]mq.Reader
+	mqWriter map[string]mq.Writer
 }
 
 func NewPulsar(conf *mq.MQConfig) (*PulsarIns, error) {
@@ -21,28 +21,34 @@ func NewPulsar(conf *mq.MQConfig) (*PulsarIns, error) {
 		mqConfig: conf,
 		mqClient: nil,
 
-		mqReader: nil,
-		mqWriter: nil,
+		mqReader: make(map[string]mq.Reader),
+		mqWriter: make(map[string]mq.Writer),
 	}
 
-	client, err := NewClient(ctx, conf.ClientConfig)
+	client, err := NewClient(ctx, &conf.ClientConfig)
 	if err != nil {
 		return nil, err
 	}
 
 	k.mqClient = client
 
-	reader, err := k.mqClient.NewReader(ctx, conf.ReaderConfig)
-	if err != nil {
-		return nil, err
-	}
-	k.mqReader = reader
+	for _, readerConf := range conf.ReaderConfig {
+		reader, err := k.mqClient.NewReader(ctx, &readerConf)
+		if err != nil {
+			return nil, err
+		}
 
-	writer, err := k.mqClient.NewWriter(ctx, conf.WriterConfig)
-	if err != nil {
-		return nil, err
+		k.mqReader[readerConf.ReaderName] = reader
 	}
-	k.mqWriter = writer
+
+	for _, writerConf := range conf.WriterConfig {
+		writer, err := k.mqClient.NewWriter(ctx, &writerConf)
+		if err != nil {
+			return nil, err
+		}
+
+		k.mqWriter[writerConf.WriterName] = writer
+	}
 
 	return k, nil
 }
@@ -51,12 +57,12 @@ func (k *PulsarIns) SetConfig(conf *mq.MQConfig) {
 	k.mqConfig = conf
 }
 
-func (k *PulsarIns) GetReader() mq.Reader {
-	return k.mqReader
+func (k *PulsarIns) GetReader(name string) mq.Reader {
+	return k.mqReader[name]
 }
 
-func (k *PulsarIns) GetWriter() mq.Writer {
-	return k.mqWriter
+func (k *PulsarIns) GetWriter(name string) mq.Writer {
+	return k.mqWriter[name]
 }
 
 func (k *PulsarIns) GetClient() mq.Client {

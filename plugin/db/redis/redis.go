@@ -8,9 +8,9 @@ import (
 	"time"
 
 	redisApi "github.com/go-redis/redis/v8"
-	"github.com/mitchellh/mapstructure"
 	"github.com/nearmeng/mango-go/plugin"
 	"github.com/nearmeng/mango-go/plugin/db"
+	"github.com/spf13/viper"
 )
 
 // DBName 名字.
@@ -39,9 +39,9 @@ func (f *factory) Destroy(interface{}) error {
 }
 
 // Setup redis插件Init方法.
-func (f *factory) Setup(c map[string]interface{}) (interface{}, error) {
+func (f *factory) Setup(v *viper.Viper) (interface{}, error) {
 	var cfg dbCfg
-	if err := mapstructure.Decode(c, &cfg); err != nil {
+	if err := v.Unmarshal(&cfg); err != nil {
 		return nil, err
 	}
 
