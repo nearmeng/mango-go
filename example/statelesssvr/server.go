@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"strconv"
 
+	_ "github.com/nearmeng/mango-go/example/statelesssvr/module"
 	"github.com/nearmeng/mango-go/plugin"
 	"github.com/nearmeng/mango-go/plugin/mq/implements/pulsar"
 	"github.com/nearmeng/mango-go/server_base/app"
 )
 
-//_ "github.com/nearmeng/mango-go/example/statelesssvr/module"
 //"github.com/nearmeng/mango-go/plugin/mq/implements/kafka"
 
 type EventMessage struct {

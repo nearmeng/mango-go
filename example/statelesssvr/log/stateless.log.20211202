@@ -1,0 +1,136 @@
+[2021-12-02 10:42:39.060] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 10:42:39.060] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 10:42:39.060] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 10:43:09.575] [ERR] [pulsar/reader.go:95] fail to create pulsar message,err:connection error
+[2021-12-02 10:43:09.575] [ERR] [pulsar/reader.go:109] fail to init consumer,err: connection error
+[2021-12-02 10:45:46.265] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 10:45:46.265] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 10:45:46.265] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 10:45:46.265] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 10:46:16.446] [ERR] [pulsar/reader.go:96] fail to create pulsar message,err:connection error
+[2021-12-02 10:46:16.446] [ERR] [pulsar/reader.go:110] fail to init consumer,err: connection error
+[2021-12-02 10:46:55.656] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 10:46:55.656] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 10:46:55.656] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 10:46:55.656] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 10:47:25.878] [ERR] [pulsar/reader.go:96] fail to create pulsar message,err:connection error
+[2021-12-02 10:47:25.878] [ERR] [pulsar/reader.go:110] fail to init consumer,err: connection error
+[2021-12-02 10:47:52.179] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 10:47:52.179] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 10:47:52.179] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 10:47:52.179] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 10:48:22.589] [ERR] [pulsar/reader.go:96] fail to create pulsar message,err:connection error
+[2021-12-02 10:48:22.589] [ERR] [pulsar/reader.go:112] fail to init consumer,err: connection error
+[2021-12-02 10:59:50.770] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 10:59:50.770] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 10:59:50.770] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 10:59:50.770] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:00:16.931] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:00:46.348] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:00:46.349] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:00:46.349] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:00:46.349] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:00:46.363] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:01:14.873] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:01:14.873] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:01:14.873] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:01:14.873] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:01:14.902] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:01:33.723] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:01:33.723] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:01:33.723] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:01:33.723] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:01:46.964] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:01:54.067] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:01:54.067] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:01:54.067] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:01:54.067] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:01:54.077] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:01:55.367] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:01:55.367] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:01:55.367] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:01:55.367] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:01:55.376] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:01:56.271] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:01:56.272] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:01:56.272] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:01:56.272] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:01:56.280] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:18.017] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:18.017] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:18.017] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:18.017] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:18.027] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:18.938] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:18.938] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:18.938] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:18.938] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:18.947] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:19.907] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:19.908] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:19.908] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:19.908] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:19.916] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:20.688] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:20.688] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:20.688] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:20.688] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:20.696] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:21.431] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:21.431] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:21.431] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:21.431] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:21.440] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:33.535] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:33.536] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:33.536] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:33.536] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:33.544] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:35.396] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:35.397] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:35.397] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:35.397] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:35.405] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:02:38.499] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:02:38.500] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:02:38.500] [INFO] [pulsar/reader.go:86] init pulsar reader
+[2021-12-02 11:02:38.500] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:02:47.458] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:03:57.898] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:03:57.898] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:03:57.898] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 11:03:57.898] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:04:03.428] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:04:39.269] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:04:39.270] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:04:39.270] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 11:04:39.270] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:04:48.957] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:05:15.886] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:05:15.887] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:05:15.887] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 11:05:15.887] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:05:21.286] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:09:04.614] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:09:04.615] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:09:04.615] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 11:09:04.615] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:09:26.670] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:51:27.792] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:51:27.792] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:51:27.792] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-02 11:51:27.802] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 11:51:27.802] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:52:13.001] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:52:13.001] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:52:13.001] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-02 11:52:13.009] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 11:52:13.009] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:52:13.013] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-02 11:54:12.137] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-02 11:54:12.137] [INFO] [app/app.go:91] server stateless_svr  init success
+[2021-12-02 11:54:12.137] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-02 11:54:12.147] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-02 11:54:12.147] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-02 11:54:12.152] [INFO] [app/app.go:117] server stateless_svr fini success
+[2021-12-10 16:08:12.076] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0

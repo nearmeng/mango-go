@@ -25,24 +25,53 @@ func KillPre(entityid string) error {
 	return WritePidFile(entityid)
 }
 
-// KillProcess 杀掉进程.
-func KillProcess(entityid string) error {
+func GetProcessPid(entityid string) (int, error) {
 	filePath := fmt.Sprintf("/tmp/%s.pid", entityid)
 	content, err := ioutil.ReadFile(filePath)
-	if err == nil {
-		pidStr := strings.ReplaceAll(string(content), "\n", "")
-		pid, err := strconv.Atoi(pidStr)
-		if err != nil {
-			return fmt.Errorf("parse pidstr=%s fail", pidStr)
-		}
-
-		// 看之前的进程还在不在, 如果还在, 那么就直接kill
-		p1, _ := os.FindProcess(pid)
-		if err := p1.Kill(); err == nil {
-			time.Sleep(_killProcessWaitTime)
-			log.Info("kill pre pid=%d", pid)
-		}
+	if err != nil {
+		return 0, err
 	}
+
+	pidStr := strings.ReplaceAll(string(content), "\n", "")
+	pid, err := strconv.Atoi(pidStr)
+	if err != nil {
+		return 0, fmt.Errorf("parse pidstr=%s fail", pidStr)
+	}
+
+	return pid, nil
+}
+
+// KillProcess 杀掉进程.
+func KillProcess(entityid string) error {
+	pid, err := GetProcessPid(entityid)
+	if err != nil {
+		return err
+	}
+
+	p1, _ := os.FindProcess(pid)
+	if err := p1.Kill(); err == nil {
+		time.Sleep(_killProcessWaitTime)
+		log.Info("kill pre pid=%d", pid)
+	}
+
+	return nil
+}
+
+//process with signal
+func SendSignal(entityid string, sig os.Signal) error {
+	pid, err := GetProcessPid(entityid)
+	if err != nil {
+		return err
+	}
+
+	p1, _ := os.FindProcess(pid)
+	err = p1.Signal(sig)
+	if err != nil {
+		return err
+	}
+
+	log.Info("send signal %v to pid %d", sig, pid)
+
 	return nil
 }
 

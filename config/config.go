@@ -17,6 +17,7 @@ type configData struct {
 	isUseBak    bool
 	cfgFilePath string
 	daemonFlag  bool
+	command     string
 }
 
 var (
@@ -25,6 +26,7 @@ var (
 
 func Init() error {
 	flag.StringVar(&(_config.cfgFilePath), "conf", _defaultConfPath, "server conf path")
+	flag.StringVar(&(_config.command), "command", "start", "command name")
 	flag.BoolVar(&(_config.daemonFlag), "daemon", false, "is daemon")
 	flag.Parse()
 
@@ -79,4 +81,8 @@ func GetConfig() *viper.Viper {
 
 func GetDaemon() bool {
 	return _config.daemonFlag
+}
+
+func GetCommand() string {
+	return _config.command
 }

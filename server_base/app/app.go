@@ -3,7 +3,9 @@ package app
 import (
 	"os"
 	"syscall"
+	"time"
 
+	"github.com/nearmeng/mango-go/common/process"
 	"github.com/nearmeng/mango-go/common/signal"
 	"github.com/nearmeng/mango-go/config"
 	"github.com/nearmeng/mango-go/plugin"
@@ -19,6 +21,9 @@ var (
 	_moduleCont serverModuleContainer = serverModuleContainer{
 		moduleCont: make(map[string]ServerModule),
 	}
+
+	_serverFrame   = 4
+	_finishChannel = make(chan struct{})
 )
 
 type serverApp struct {
@@ -50,6 +55,21 @@ func (s *serverApp) GetServerID() string {
 	return s.serverID
 }
 
+func (s *serverApp) initInputParam() error {
+	switch config.GetCommand() {
+	case "stop":
+		process.SendSignal(s.serverID, syscall.SIGUSR1)
+		os.Exit(0)
+	case "reload":
+		process.SendSignal(s.serverID, syscall.SIGUSR2)
+		os.Exit(0)
+	case "start":
+		break
+	}
+
+	return nil
+}
+
 func (s *serverApp) Init() error {
 	//config
 	err := config.Init()
@@ -60,8 +80,19 @@ func (s *serverApp) Init() error {
 	conf := config.GetConfig()
 	s.serverID = conf.GetString("svrinfo.serverid")
 
+	//input param process
+	err = s.initInputParam()
+	if err != nil {
+		return err
+	}
+
+	//kill pre process
+	process.KillPre(s.serverID)
+
 	//signal
+	signal.RegisterSignalHandler([]os.Signal{syscall.SIGUSR1}, s.Quit)
 	signal.RegisterSignalHandler([]os.Signal{syscall.SIGUSR2}, s.Reload)
+	signal.StartSignal()
 
 	//plugin
 	err = plugin.InitPlugin(conf.Sub("plugin"))
@@ -120,6 +151,39 @@ func (s *serverApp) Fini() error {
 
 func (s *serverApp) Mainloop() {
 
+	interval := time.Second / time.Duration(_serverFrame)
+	t := time.NewTicker(interval)
+	defer t.Stop()
+
+	for {
+		finished := false
+
+		select {
+		case <-_finishChannel:
+			log.Info("server %s finished", s.serverName)
+			finished = true
+		case curr := <-t.C:
+			s.onFrame(curr)
+		}
+
+		if finished {
+			break
+		}
+	}
+}
+
+func (s *serverApp) onFrame(t time.Time) {
+
+	for _, module := range _moduleCont.moduleCont {
+		module.Mainloop()
+	}
+
+}
+
+func (s *serverApp) Quit() {
+	log.Info("recv signal to quit")
+
+	_finishChannel <- struct{}{}
 }
 
 func (s *serverApp) Reload() {

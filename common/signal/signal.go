@@ -33,7 +33,7 @@ func RegisterSignalHandler(sigs []os.Signal, handler Handler) {
 // StartSignal 启动信号监听协程.
 func StartSignal() {
 	// 创建监听退出chan
-	c := make(chan os.Signal, 10) //nolint:gomnd
+	c := make(chan os.Signal, 20) //nolint:gomnd
 	// 监听指定信号 ctrl+c kill
 
 	if len(_sigHandlers) == 0 {

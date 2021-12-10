@@ -24,7 +24,6 @@ func (m *TestModule) UnInit() error {
 }
 
 func (m *TestModule) Mainloop() {
-
 }
 
 func (m *TestModule) IsPreInit() bool {
