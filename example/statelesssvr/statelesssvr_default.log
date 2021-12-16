@@ -35,3 +35,19 @@
 [2021-12-10 20:09:27.684] [INFO] cur pid=10199
 [2021-12-10 20:09:27.684] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
 [2021-12-10 20:09:32.437] [INFO] send signal user defined signal 2 to pid 10199
+[2021-12-16 17:09:39.700] [INFO] cur pid=29465
+[2021-12-16 17:09:39.700] [INFO] Listen signals=[user defined signal 2 user defined signal 1]
+[2021-12-16 17:15:56.866] [INFO] cur pid=454
+[2021-12-16 17:15:56.868] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
+[2021-12-16 17:17:57.058] [INFO] cur pid=1842
+[2021-12-16 17:17:57.058] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
+[2021-12-16 17:20:36.940] [INFO] cur pid=5972
+[2021-12-16 17:20:36.942] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
+[2021-12-16 17:24:18.729] [INFO] cur pid=7977
+[2021-12-16 17:24:18.729] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
+[2021-12-16 19:04:26.636] [INFO] cur pid=19657
+[2021-12-16 19:04:26.636] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
+[2021-12-16 19:06:11.449] [INFO] cur pid=21849
+[2021-12-16 19:06:11.449] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
+[2021-12-16 19:11:28.025] [INFO] cur pid=25147
+[2021-12-16 19:11:28.025] [INFO] Listen signals=[user defined signal 1 user defined signal 2]

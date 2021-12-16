@@ -1,0 +1,138 @@
+[2021-12-10 16:08:12.076] [INFO] [app/app.go:95] server stateless_svr  init success
+[2021-12-10 16:08:12.076] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 16:08:12.093] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 16:08:12.093] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 16:08:12.355] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:12.355014713 +0800 CST m=+0.282781081
+[2021-12-10 16:08:12.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:12.604740651 +0800 CST m=+0.532507007
+[2021-12-10 16:08:12.855] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:12.854998089 +0800 CST m=+0.782764443
+[2021-12-10 16:08:13.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:13.104781761 +0800 CST m=+1.032548113
+[2021-12-10 16:08:13.355] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:13.355011471 +0800 CST m=+1.282777829
+[2021-12-10 16:08:13.605] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:13.605202871 +0800 CST m=+1.532969221
+[2021-12-10 16:08:13.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:13.85428312 +0800 CST m=+1.782049484
+[2021-12-10 16:08:14.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:14.104855718 +0800 CST m=+2.032622092
+[2021-12-10 16:08:14.355] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:14.355000853 +0800 CST m=+2.282767213
+[2021-12-10 16:08:14.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:14.604799925 +0800 CST m=+2.532566287
+[2021-12-10 16:08:14.855] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:14.854996597 +0800 CST m=+2.782762974
+[2021-12-10 16:08:15.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:15.104601503 +0800 CST m=+3.032367854
+[2021-12-10 16:08:15.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:15.354863378 +0800 CST m=+3.282629746
+[2021-12-10 16:08:15.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:15.604738212 +0800 CST m=+3.532504585
+[2021-12-10 16:08:15.855] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:15.85505739 +0800 CST m=+3.782823749
+[2021-12-10 16:08:16.105] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:16.105190815 +0800 CST m=+4.032957163
+[2021-12-10 16:08:16.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:16.354266991 +0800 CST m=+4.282033341
+[2021-12-10 16:08:16.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:16.604905938 +0800 CST m=+4.532672290
+[2021-12-10 16:08:16.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:16.854890984 +0800 CST m=+4.782657347
+[2021-12-10 16:08:17.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:17.104478553 +0800 CST m=+5.032244904
+[2021-12-10 16:08:17.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:17.354300666 +0800 CST m=+5.282067049
+[2021-12-10 16:08:17.605] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:17.605043421 +0800 CST m=+5.532809771
+[2021-12-10 16:08:17.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:17.854309557 +0800 CST m=+5.782075908
+[2021-12-10 16:08:18.105] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:18.105058682 +0800 CST m=+6.032825031
+[2021-12-10 16:08:18.355] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:18.355226844 +0800 CST m=+6.282993193
+[2021-12-10 16:08:18.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:18.60446162 +0800 CST m=+6.532227981
+[2021-12-10 16:08:18.855] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:18.855197434 +0800 CST m=+6.782963803
+[2021-12-10 16:08:19.105] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:19.105141705 +0800 CST m=+7.032908082
+[2021-12-10 16:08:19.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:19.354835214 +0800 CST m=+7.282601561
+[2021-12-10 16:08:19.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:19.604933227 +0800 CST m=+7.532699591
+[2021-12-10 16:08:19.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:19.854892738 +0800 CST m=+7.782659087
+[2021-12-10 16:08:20.105] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:20.10512545 +0800 CST m=+8.032891798
+[2021-12-10 16:08:20.355] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:20.355033142 +0800 CST m=+8.282799490
+[2021-12-10 16:08:20.605] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:20.60513597 +0800 CST m=+8.532902320
+[2021-12-10 16:08:20.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:20.854243306 +0800 CST m=+8.782009680
+[2021-12-10 16:08:21.105] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:21.105026975 +0800 CST m=+9.032793341
+[2021-12-10 16:08:21.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:21.354805503 +0800 CST m=+9.282571884
+[2021-12-10 16:08:21.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:21.604603854 +0800 CST m=+9.532370224
+[2021-12-10 16:08:21.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:21.854651893 +0800 CST m=+9.782418258
+[2021-12-10 16:08:22.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:22.104466047 +0800 CST m=+10.032232404
+[2021-12-10 16:08:22.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:22.354311639 +0800 CST m=+10.282078003
+[2021-12-10 16:08:22.605] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:22.60516492 +0800 CST m=+10.532931281
+[2021-12-10 16:08:22.855] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:22.85497183 +0800 CST m=+10.782738194
+[2021-12-10 16:08:23.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:23.104798937 +0800 CST m=+11.032565288
+[2021-12-10 16:08:23.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:23.354794452 +0800 CST m=+11.282560800
+[2021-12-10 16:08:23.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:23.604581804 +0800 CST m=+11.532348179
+[2021-12-10 16:08:23.855] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:23.855236763 +0800 CST m=+11.783003151
+[2021-12-10 16:08:24.105] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:24.105264403 +0800 CST m=+12.033030751
+[2021-12-10 16:08:24.355] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:24.355084603 +0800 CST m=+12.282850946
+[2021-12-10 16:08:24.605] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:24.605239047 +0800 CST m=+12.533005393
+[2021-12-10 16:08:24.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:24.854282384 +0800 CST m=+12.782048748
+[2021-12-10 16:08:25.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:25.104501215 +0800 CST m=+13.032267639
+[2021-12-10 16:08:25.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:25.354297964 +0800 CST m=+13.282064311
+[2021-12-10 16:08:25.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:25.604418294 +0800 CST m=+13.532184642
+[2021-12-10 16:08:25.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:25.854272278 +0800 CST m=+13.782038626
+[2021-12-10 16:08:26.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:26.104436983 +0800 CST m=+14.032203334
+[2021-12-10 16:08:26.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:26.354643357 +0800 CST m=+14.282409707
+[2021-12-10 16:08:26.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:26.604832312 +0800 CST m=+14.532598796
+[2021-12-10 16:08:26.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:26.854725502 +0800 CST m=+14.782491849
+[2021-12-10 16:08:27.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:27.104881324 +0800 CST m=+15.032647668
+[2021-12-10 16:08:27.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:27.354790512 +0800 CST m=+15.282556868
+[2021-12-10 16:08:27.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:27.604636805 +0800 CST m=+15.532403153
+[2021-12-10 16:08:27.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:27.854567812 +0800 CST m=+15.782334160
+[2021-12-10 16:08:28.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:28.104746261 +0800 CST m=+16.032512604
+[2021-12-10 16:08:28.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:28.354543524 +0800 CST m=+16.282309886
+[2021-12-10 16:08:28.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:28.60482629 +0800 CST m=+16.532592653
+[2021-12-10 16:08:28.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:28.854605569 +0800 CST m=+16.782371933
+[2021-12-10 16:08:29.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:29.104870438 +0800 CST m=+17.032636785
+[2021-12-10 16:08:29.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:29.354901977 +0800 CST m=+17.282668346
+[2021-12-10 16:08:29.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:29.604299155 +0800 CST m=+17.532065503
+[2021-12-10 16:08:29.854] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:29.854282304 +0800 CST m=+17.782048694
+[2021-12-10 16:08:30.104] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:30.10448266 +0800 CST m=+18.032249007
+[2021-12-10 16:08:30.354] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:30.354253923 +0800 CST m=+18.282020271
+[2021-12-10 16:08:30.604] [INFO] [app/app.go:143] on frame, time 2021-12-10 16:08:30.604317361 +0800 CST m=+18.532083710
+[2021-12-10 16:15:35.110] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-10 16:15:35.110] [INFO] [app/app.go:95] server stateless_svr  init success
+[2021-12-10 16:15:35.110] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 16:15:35.134] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 16:15:35.134] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 16:16:51.254] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-10 16:16:51.254] [INFO] [module/module.go:17] test module init
+[2021-12-10 16:16:51.254] [INFO] [app/app.go:95] server stateless_svr  init success
+[2021-12-10 16:16:51.254] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 16:16:51.262] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 16:16:51.262] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 16:19:54.397] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-10 16:19:54.397] [INFO] [module/module.go:17] test module init
+[2021-12-10 16:19:54.397] [INFO] [app/app.go:95] server stateless_svr  init success
+[2021-12-10 16:19:54.397] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 16:19:54.405] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 16:19:54.405] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 16:22:16.336] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-10 16:22:16.337] [INFO] [module/module.go:15] test module init
+[2021-12-10 16:22:16.337] [INFO] [app/app.go:96] server stateless_svr  init success
+[2021-12-10 16:22:16.337] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 16:22:16.345] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 16:22:16.345] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 16:22:27.039] [INFO] [signal/signal.go:54] Recv signal=user defined signal 2
+[2021-12-10 16:22:27.039] [INFO] [app/app.go:159] server stateless_svr reload begin
+[2021-12-10 16:22:27.039] [INFO] [module/module.go:38] test module reload
+[2021-12-10 16:22:27.039] [INFO] [app/app.go:176] server stateless_svr reload end
+[2021-12-10 17:51:16.830] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-10 17:51:16.830] [INFO] [module/module.go:15] test module init
+[2021-12-10 17:51:16.830] [INFO] [app/app.go:101] server stateless_svr  init success
+[2021-12-10 17:51:16.830] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 17:51:16.839] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 17:51:16.839] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 17:51:45.072] [INFO] [signal/signal.go:54] Recv signal=user defined signal 1
+[2021-12-10 17:51:45.072] [INFO] [app/app.go:163] recv signal to quit
+[2021-12-10 17:51:45.072] [INFO] [app/app.go:142] server stateless_svr finished
+[2021-12-10 17:51:45.072] [INFO] [module/module.go:21] test module uninit
+[2021-12-10 17:51:45.072] [INFO] [app/app.go:127] server stateless_svr fini success
+[2021-12-10 20:08:19.815] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-10 20:08:19.815] [INFO] [module/module.go:15] test module init
+[2021-12-10 20:08:19.815] [INFO] [app/app.go:122] server stateless_svr  init success
+[2021-12-10 20:08:19.815] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 20:08:19.823] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 20:08:19.823] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 20:08:34.857] [INFO] [signal/signal.go:54] Recv signal=user defined signal 1
+[2021-12-10 20:08:34.857] [INFO] [app/app.go:184] recv signal to quit
+[2021-12-10 20:08:34.857] [INFO] [app/app.go:163] server stateless_svr finished
+[2021-12-10 20:08:34.857] [INFO] [module/module.go:21] test module uninit
+[2021-12-10 20:08:34.857] [INFO] [app/app.go:148] server stateless_svr fini success
+[2021-12-10 20:09:27.689] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-10 20:09:27.689] [INFO] [module/module.go:15] test module init
+[2021-12-10 20:09:27.689] [INFO] [app/app.go:122] server stateless_svr  init success
+[2021-12-10 20:09:27.689] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-10 20:09:27.696] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-10 20:09:27.696] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}
+[2021-12-10 20:09:32.437] [INFO] [signal/signal.go:54] Recv signal=user defined signal 2
+[2021-12-10 20:09:32.437] [INFO] [app/app.go:191] server stateless_svr reload begin
+[2021-12-10 20:09:32.437] [INFO] [module/module.go:38] test module reload
+[2021-12-10 20:09:32.437] [INFO] [app/app.go:208] server stateless_svr reload end
+[2021-12-16 17:09:39.700] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0

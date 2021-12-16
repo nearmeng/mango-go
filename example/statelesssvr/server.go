@@ -1,14 +1,15 @@
 package main
 
 import (
-	"context"
+	"encoding/binary"
 	"encoding/json"
 	"fmt"
 	"strconv"
 
 	_ "github.com/nearmeng/mango-go/example/statelesssvr/module"
 	"github.com/nearmeng/mango-go/plugin"
-	"github.com/nearmeng/mango-go/plugin/mq/implements/pulsar"
+	"github.com/nearmeng/mango-go/plugin/transport"
+	"github.com/nearmeng/mango-go/plugin/transport/tcp"
 	"github.com/nearmeng/mango-go/server_base/app"
 )
 
@@ -54,6 +55,33 @@ func (e *EventMessage) Topic() string {
 	return "test_kafka"
 }
 
+type eventTcp struct {
+}
+
+func (*eventTcp) OnOpened(conn transport.Conn) {
+	fmt.Printf("get conn %s connect\n", conn.GetRemoteAddr().String())
+}
+
+func (*eventTcp) OnClosed(conn transport.Conn, active bool) {
+	fmt.Printf("get conn %s closed active %t\n", conn.GetRemoteAddr().String(), active)
+
+}
+
+func (*eventTcp) OnData(conn transport.Conn, data []byte) {
+	headerSize := binary.LittleEndian.Uint32(data)
+	dataStr := string(data[4:])
+	fmt.Printf("conn %s get header_size %d data %s\n", conn.GetRemoteAddr().String(), headerSize, dataStr)
+
+	sendData := []byte(string("hello client"))
+	sendHeaderSize := len(sendData)
+	sendBuff := make([]byte, 4+sendHeaderSize)
+	binary.LittleEndian.PutUint32(sendBuff[0:4], uint32(sendHeaderSize))
+
+	copy(sendBuff[4:], sendData)
+
+	_ = conn.Send(sendBuff)
+}
+
 func main() {
 
 	server := app.NewServerApp("stateless_svr")
@@ -63,45 +91,54 @@ func main() {
 		panic(err)
 	}
 
-	pulsarIns := plugin.GetPluginInst("mq", "pulsar").(*pulsar.PulsarIns)
-	kreader := pulsarIns.GetReader("reader1")
-	if kreader == nil {
-		fmt.Printf("reader is nil")
-		return
-	}
+	/*
+		pulsarIns := plugin.GetPluginInst("mq", "pulsar").(*pulsar.PulsarIns)
+		kreader := pulsarIns.GetReader("reader1")
+		if kreader == nil {
+			fmt.Printf("reader is nil")
+			return
+		}
 
-	kwriter := pulsarIns.GetWriter("writer1")
-	if kwriter == nil {
-		fmt.Printf("writer is nil")
-	}
+		kwriter := pulsarIns.GetWriter("writer1")
+		if kwriter == nil {
+			fmt.Printf("writer is nil")
+		}
 
-	ctx := context.Background()
+		ctx := context.Background()
 
-	_, err = kwriter.WriteMessage(ctx, &EventMessage{
-		UserId:    1,
-		FightId:   2,
-		EventType: "type_b",
-		AttackSum: 10,
-	})
-	if err != nil {
-		fmt.Printf("writer failed for %v", err)
-		return
-	}
+		_, err = kwriter.WriteMessage(ctx, &EventMessage{
+			UserId:    1,
+			FightId:   2,
+			EventType: "type_b",
+			AttackSum: 10,
+		})
+		if err != nil {
+			fmt.Printf("writer failed for %v", err)
+			return
+		}
 
-	m1, err := kreader.ReadMessage(ctx)
-	if err != nil {
-		panic(err)
-	}
+		m1, err := kreader.ReadMessage(ctx)
+		if err != nil {
+			panic(err)
+		}
 
-	fmt.Printf("read msg %v\n", m1)
+		fmt.Printf("read msg %v\n", m1)
 
-	kreader.Ack(ctx, m1)
-	fmt.Printf("ack finished\n")
+		kreader.Ack(ctx, m1)
+		fmt.Printf("ack finished\n")
 
-	kreader.Close()
-	fmt.Printf("reader closed\n")
+		kreader.Close()
+		fmt.Printf("reader closed\n")
+
+	*/
+
+	tcpIns := plugin.GetPluginInst("transport", "tcp").(*tcp.TcpTransport)
+
+	tcpIns.Init(transport.Options{EventHandler: &eventTcp{}})
 
 	server.Mainloop()
+
+	tcpIns.Uninit()
 
 	err = server.Fini()
 	if err != nil {
