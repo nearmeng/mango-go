@@ -1,12 +1,6 @@
 // Example function-based high-level Apache Kafka consumer
 package main
 
-import (
-	"encoding/binary"
-	"fmt"
-	"net"
-)
-
 /**
  * Copyright 2016 Confluent Inc.
  *
@@ -28,96 +22,95 @@ import (
 
 func main() {
 	/*
-		sigchan := make(chan os.Signal, 1)
-		signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
+			sigchan := make(chan os.Signal, 1)
+			signal.Notify(sigchan, syscall.SIGINT, syscall.SIGTERM)
 
-		c, err := kafka.NewConsumer(&kafka.ConfigMap{
-			// Avoid connecting to IPv6 brokers:
-			// This is needed for the ErrAllBrokersDown show-case below
-			// when using localhost brokers on OSX, since the OSX resolver
-			// will return the IPv6 addresses first.
-			// You typically don't need to specify this configuration property.
-			"bootstrap.servers":     "9.134.145.178:9092",
-			"group.id":              "reader1",
-			"broker.address.family": "v4",
-			"session.timeout.ms":    6000,
-			"auto.offset.reset":     "earliest"})
+			c, err := kafka.NewConsumer(&kafka.ConfigMap{
+				// Avoid connecting to IPv6 brokers:
+				// This is needed for the ErrAllBrokersDown show-case below
+				// when using localhost brokers on OSX, since the OSX resolver
+				// will return the IPv6 addresses first.
+				// You typically don't need to specify this configuration property.
+				"bootstrap.servers":     "9.134.145.178:9092",
+				"group.id":              "reader1",
+				"broker.address.family": "v4",
+				"session.timeout.ms":    6000,
+				"auto.offset.reset":     "earliest"})
 
-		if err != nil {
-			fmt.Fprintf(os.Stderr, "Failed to create consumer: %s\n", err)
-			os.Exit(1)
-		}
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Failed to create consumer: %s\n", err)
+				os.Exit(1)
+			}
 
-		fmt.Printf("Created Consumer %v\n", c)
+			fmt.Printf("Created Consumer %v\n", c)
 
-		err = c.SubscribeTopics([]string{"test_kafka"}, nil)
+			err = c.SubscribeTopics([]string{"test_kafka"}, nil)
 
-		run := true
+			run := true
 
-		for run {
-			select {
-			case sig := <-sigchan:
-				fmt.Printf("Caught signal %v: terminating\n", sig)
-				run = false
-			default:
-				ev := c.Poll(100)
-				if ev == nil {
-					continue
-				}
-
-				switch e := ev.(type) {
-				case *kafka.Message:
-					fmt.Printf("%% Message on %s:\n%s\n",
-						e.TopicPartition, string(e.Value))
-					if e.Headers != nil {
-						fmt.Printf("%% Headers: %v\n", e.Headers)
-					}
-				case kafka.Error:
-					// Errors should generally be considered
-					// informational, the client will try to
-					// automatically recover.
-					// But in this example we choose to terminate
-					// the application if all brokers are down.
-					fmt.Fprintf(os.Stderr, "%% Error: %v: %v\n", e.Code(), e)
-					if e.Code() == kafka.ErrAllBrokersDown {
-						run = false
-					}
+			for run {
+				select {
+				case sig := <-sigchan:
+					fmt.Printf("Caught signal %v: terminating\n", sig)
+					run = false
 				default:
-					fmt.Printf("Ignored %v\n", e)
+					ev := c.Poll(100)
+					if ev == nil {
+						continue
+					}
+
+					switch e := ev.(type) {
+					case *kafka.Message:
+						fmt.Printf("%% Message on %s:\n%s\n",
+							e.TopicPartition, string(e.Value))
+						if e.Headers != nil {
+							fmt.Printf("%% Headers: %v\n", e.Headers)
+						}
+					case kafka.Error:
+						// Errors should generally be considered
+						// informational, the client will try to
+						// automatically recover.
+						// But in this example we choose to terminate
+						// the application if all brokers are down.
+						fmt.Fprintf(os.Stderr, "%% Error: %v: %v\n", e.Code(), e)
+						if e.Code() == kafka.ErrAllBrokersDown {
+							run = false
+						}
+					default:
+						fmt.Printf("Ignored %v\n", e)
+					}
 				}
 			}
+
+			fmt.Printf("Closing consumer\n")
+			c.Close()
+
+		conn, err := net.Dial("tcp", "127.0.0.1:8888")
+		if err != nil {
+			return
 		}
 
-		fmt.Printf("Closing consumer\n")
-		c.Close()
+		defer conn.Close()
+
+		sendData := []byte(string("hello server"))
+		sendBuff := make([]byte, 8+len(sendData))
+		sendHeaderSize := len(sendData)
+
+		fmt.Printf("len buff %d\n", len(sendBuff))
+		fmt.Printf("header size %d\n", uint32(sendHeaderSize))
+
+		binary.LittleEndian.PutUint32(sendBuff[0:4], uint32(sendHeaderSize))
+		binary.LittleEndian.PutUint32(sendBuff[4:8], 0)
+		//_ = append(sendBuff[8:], sendData...)
+		copy(sendBuff[8:], sendData)
+
+		fmt.Printf("send header_size %d body_size %d\n", binary.LittleEndian.Uint32(sendBuff), binary.LittleEndian.Uint32(sendBuff[4:8]))
+		fmt.Printf("len buff %d str %s\n", len(sendBuff), string(sendBuff[8:]))
+
+		conn.Write(sendBuff)
+
+		recvBuff := [512]byte{}
+		n, _ := conn.Read(recvBuff[:])
+		fmt.Printf("recv data from server %d\n", n)
 	*/
-
-	conn, err := net.Dial("tcp", "127.0.0.1:8888")
-	if err != nil {
-		return
-	}
-
-	defer conn.Close()
-
-	sendData := []byte(string("hello server"))
-	sendBuff := make([]byte, 8+len(sendData))
-	sendHeaderSize := len(sendData)
-
-	fmt.Printf("len buff %d\n", len(sendBuff))
-	fmt.Printf("header size %d\n", uint32(sendHeaderSize))
-
-	binary.LittleEndian.PutUint32(sendBuff[0:4], uint32(sendHeaderSize))
-	binary.LittleEndian.PutUint32(sendBuff[4:8], 0)
-	//_ = append(sendBuff[8:], sendData...)
-	copy(sendBuff[8:], sendData)
-
-	fmt.Printf("send header_size %d body_size %d\n", binary.LittleEndian.Uint32(sendBuff), binary.LittleEndian.Uint32(sendBuff[4:8]))
-	fmt.Printf("len buff %d str %s\n", len(sendBuff), string(sendBuff[8:]))
-
-	conn.Write(sendBuff)
-
-	recvBuff := [512]byte{}
-	n, _ := conn.Read(recvBuff[:])
-	fmt.Printf("recv data from server %d\n", n)
-
 }

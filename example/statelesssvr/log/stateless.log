@@ -61,3 +61,9 @@
 [2021-12-16 19:11:52.462] [INFO] [tcp/tcp.go:74] conn send data size 20 to 127.0.0.1:36014
 [2021-12-16 19:11:52.463] [ERR] [transport/codec.go:59] client 127.0.0.1:36014 head is not match
 [2021-12-16 19:11:52.463] [ERR] [tcp/tcp.go:140] codec decode failed for head not match
+[2021-12-16 20:07:34.098] [INFO] [bingologger/bingologger.go:70] Init log path=./log/stateless.log, level=0
+[2021-12-16 20:07:34.098] [INFO] [module/module.go:15] test module init
+[2021-12-16 20:07:34.098] [INFO] [app/app.go:123] server stateless_svr  init success
+[2021-12-16 20:07:34.098] [INFO] [pulsar/writer.go:166] init pulsar writer
+[2021-12-16 20:07:34.113] [INFO] [pulsar/reader.go:85] init pulsar reader
+[2021-12-16 20:07:34.113] [DEBUG] [pulsar/config.go:15] reader config: &{Topic:[test_pulsar] AutoCommit:false TopicPattern: OffsetReset: ReaderName:reader1 StartOffset:0 SubscriptionType:0 Partition:0 Properties:map[]}

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
@@ -8,12 +9,10 @@ import (
 
 	_ "github.com/nearmeng/mango-go/example/statelesssvr/module"
 	"github.com/nearmeng/mango-go/plugin"
+	"github.com/nearmeng/mango-go/plugin/mq/pulsar"
 	"github.com/nearmeng/mango-go/plugin/transport"
-	"github.com/nearmeng/mango-go/plugin/transport/tcp"
 	"github.com/nearmeng/mango-go/server_base/app"
 )
-
-//"github.com/nearmeng/mango-go/plugin/mq/implements/kafka"
 
 type EventMessage struct {
 	UserId    int64
@@ -91,58 +90,57 @@ func main() {
 		panic(err)
 	}
 
-	/*
-		pulsarIns := plugin.GetPluginInst("mq", "pulsar").(*pulsar.PulsarIns)
-		kreader := pulsarIns.GetReader("reader1")
-		if kreader == nil {
-			fmt.Printf("reader is nil")
-			return
-		}
-
-		kwriter := pulsarIns.GetWriter("writer1")
-		if kwriter == nil {
-			fmt.Printf("writer is nil")
-		}
-
-		ctx := context.Background()
-
-		_, err = kwriter.WriteMessage(ctx, &EventMessage{
-			UserId:    1,
-			FightId:   2,
-			EventType: "type_b",
-			AttackSum: 10,
-		})
-		if err != nil {
-			fmt.Printf("writer failed for %v", err)
-			return
-		}
-
-		m1, err := kreader.ReadMessage(ctx)
-		if err != nil {
-			panic(err)
-		}
-
-		fmt.Printf("read msg %v\n", m1)
-
-		kreader.Ack(ctx, m1)
-		fmt.Printf("ack finished\n")
-
-		kreader.Close()
-		fmt.Printf("reader closed\n")
-
-	*/
-
-	tcpIns := plugin.GetPluginInst("transport", "tcp").(*tcp.TcpTransport)
-
-	tcpIns.Init(transport.Options{EventHandler: &eventTcp{}})
-
-	server.Mainloop()
-
-	tcpIns.Uninit()
-
-	err = server.Fini()
-	if err != nil {
-		fmt.Printf("server fini failed")
+	pulsarIns := plugin.GetPluginInst("mq", "pulsar").(*pulsar.PulsarClient)
+	kreader := pulsarIns.GetReader("reader1")
+	if kreader == nil {
+		fmt.Printf("reader is nil")
+		return
 	}
+
+	kwriter := pulsarIns.GetWriter("writer1")
+	if kwriter == nil {
+		fmt.Printf("writer is nil")
+	}
+
+	ctx := context.Background()
+
+	_, err = kwriter.WriteMessage(ctx, &EventMessage{
+		UserId:    1,
+		FightId:   2,
+		EventType: "type_b",
+		AttackSum: 10,
+	})
+	if err != nil {
+		fmt.Printf("writer failed for %v", err)
+		return
+	}
+
+	m1, err := kreader.ReadMessage(ctx)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Printf("read msg %v\n", m1)
+
+	kreader.Ack(ctx, m1)
+	fmt.Printf("ack finished\n")
+
+	kreader.Close()
+	fmt.Printf("reader closed\n")
+
+	/*
+		tcpIns := plugin.GetPluginInst("transport", "tcp").(*tcp.TcpTransport)
+
+		tcpIns.Init(transport.Options{EventHandler: &eventTcp{}})
+
+		server.Mainloop()
+
+		tcpIns.Uninit()
+
+		err = server.Fini()
+		if err != nil {
+			fmt.Printf("server fini failed")
+		}
+	*/
 
 }

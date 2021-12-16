@@ -12,8 +12,9 @@ import (
 	"github.com/nearmeng/mango-go/plugin/log"
 
 	_ "github.com/nearmeng/mango-go/plugin/log/bingologger"
-	_ "github.com/nearmeng/mango-go/plugin/mq/implements/kafka"
-	_ "github.com/nearmeng/mango-go/plugin/mq/implements/pulsar"
+	_ "github.com/nearmeng/mango-go/plugin/mq/kafka"
+	_ "github.com/nearmeng/mango-go/plugin/mq/pulsar"
+	_ "github.com/nearmeng/mango-go/plugin/transport/tcp"
 )
 
 var (
