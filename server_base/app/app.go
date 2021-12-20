@@ -15,6 +15,9 @@ import (
 	_ "github.com/nearmeng/mango-go/plugin/mq/kafka"
 	_ "github.com/nearmeng/mango-go/plugin/mq/pulsar"
 	_ "github.com/nearmeng/mango-go/plugin/transport/tcp"
+
+	_ "github.com/nearmeng/mango-go/server_data/res"
+	_ "github.com/nearmeng/mango-go/server_data/res/xres"
 )
 
 var (
