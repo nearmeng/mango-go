@@ -45,3 +45,6 @@ plugin:
         -
           topic: "test_pulsar"
           writer_name: "writer1"
+  rpc:
+    trpc:
+      config_path: ./conf/trpc_go.yaml

@@ -59,6 +59,9 @@ func (f *factory) Reload(interface{}, map[string]interface{}) error {
 	return nil
 }
 
+func (f *factory) Mainloop(interface{}) {
+}
+
 // dbCfg Redis配置.
 type dbCfg struct {
 	Addr        string `mapstructure:"addr"`

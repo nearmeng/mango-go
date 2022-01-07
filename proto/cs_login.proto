@@ -1,0 +1,13 @@
+syntax = "proto3";
+package proto;
+option go_package = "/csproto";
+
+message CSLogin
+{
+    string name     =   1;
+}
+
+message SCLogin
+{
+    int32 success  =   1;
+}

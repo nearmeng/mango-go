@@ -1,55 +1,133 @@
-[2021-11-29 17:55:24.836] [INFO] init reader...
-[2021-11-29 17:55:24.837] [INFO] init reader...
-[2021-11-29 18:06:59.272] [INFO] init reader...
-[2021-11-29 18:06:59.273] [INFO] init reader...
-[2021-11-29 18:11:10.684] [INFO] init reader...
-[2021-11-29 18:11:10.685] [INFO] init reader...
-[2021-11-29 19:09:07.575] [INFO] init reader...
-[2021-11-29 19:09:07.576] [INFO] init reader...
-[2021-11-29 19:16:37.231] [INFO] init reader...
-[2021-11-29 19:16:37.232] [INFO] init reader...
-[2021-11-29 19:30:52.443] [INFO] init reader...
-[2021-11-29 19:30:52.443] [INFO] init reader...
-[2021-11-29 19:40:28.260] [INFO] init reader...
-[2021-11-29 19:40:28.261] [INFO] init reader...
-[2021-11-29 19:48:33.169] [INFO] init reader...
-[2021-11-29 19:48:33.170] [INFO] init reader...
-[2021-11-29 19:51:59.854] [INFO] init reader...
-[2021-11-29 19:51:59.854] [INFO] init reader...
-[2021-11-29 19:53:22.428] [INFO] init reader...
-[2021-11-29 19:53:22.429] [INFO] init reader...
-[2021-11-29 20:08:35.035] [INFO] init reader...
-[2021-11-29 20:08:35.036] [INFO] init reader...
-[2021-11-30 10:23:00.977] [INFO] init reader...
-[2021-11-30 10:23:00.978] [INFO] init reader...
-[2021-11-30 10:23:38.185] [INFO] init reader...
-[2021-11-30 10:23:38.186] [INFO] init reader...
-[2021-11-30 10:39:11.950] [INFO] init reader...
-[2021-11-30 10:39:11.951] [INFO] init reader...
-[2021-12-10 16:22:16.336] [INFO] Listen signals=[user defined signal 2]
-[2021-12-10 17:51:16.828] [INFO] cur pid=8990
-[2021-12-10 17:51:16.829] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-10 20:08:19.814] [INFO] cur pid=9985
-[2021-12-10 20:08:19.814] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-10 20:08:34.857] [INFO] send signal user defined signal 1 to pid 9985
-[2021-12-10 20:09:27.684] [INFO] cur pid=10199
-[2021-12-10 20:09:27.684] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-10 20:09:32.437] [INFO] send signal user defined signal 2 to pid 10199
-[2021-12-16 17:09:39.700] [INFO] cur pid=29465
-[2021-12-16 17:09:39.700] [INFO] Listen signals=[user defined signal 2 user defined signal 1]
-[2021-12-16 17:15:56.866] [INFO] cur pid=454
-[2021-12-16 17:15:56.868] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-16 17:17:57.058] [INFO] cur pid=1842
-[2021-12-16 17:17:57.058] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-16 17:20:36.940] [INFO] cur pid=5972
-[2021-12-16 17:20:36.942] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-16 17:24:18.729] [INFO] cur pid=7977
-[2021-12-16 17:24:18.729] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-16 19:04:26.636] [INFO] cur pid=19657
-[2021-12-16 19:04:26.636] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-16 19:06:11.449] [INFO] cur pid=21849
-[2021-12-16 19:06:11.449] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-16 19:11:28.025] [INFO] cur pid=25147
-[2021-12-16 19:11:28.025] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
-[2021-12-16 20:07:34.097] [INFO] cur pid=3884
-[2021-12-16 20:07:34.097] [INFO] Listen signals=[user defined signal 1 user defined signal 2]
+[2022-01-07 15:42:42.861] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 15:42:42.861] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 15:42:42.861] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 15:42:42.863] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 15:42:42.863] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 15:42:42.863] [INFO] register server module test_module
+[2022-01-07 15:42:42.884] [INFO] load config success, filepath ./conf/server.yaml
+
+[2022-01-07 15:46:36.176] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 15:46:36.176] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 15:46:36.176] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 15:46:36.178] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 15:46:36.178] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 15:46:36.178] [INFO] register server module test_module
+[2022-01-07 15:46:36.198] [INFO] load config success, filepath ./conf/server.yaml
+
+[2022-01-07 15:46:48.679] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 15:46:48.679] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 15:46:48.680] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 15:46:48.682] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 15:46:48.682] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 15:46:48.682] [INFO] register server module test_module
+[2022-01-07 15:46:48.701] [INFO] load config success, filepath ./conf/server.yaml
+
+[2022-01-07 15:47:53.063] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 15:47:53.063] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 15:47:53.063] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 15:47:53.066] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 15:47:53.066] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 15:47:53.066] [INFO] register server module test_module
+[2022-01-07 15:48:06.892] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 15:48:06.892] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 15:48:06.892] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 15:48:06.895] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 15:48:06.895] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 15:48:06.895] [INFO] register server module test_module
+[2022-01-07 15:48:06.915] [INFO] load config success, filepath ./conf/server.yaml
+
+[2022-01-07 15:48:24.099] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 15:48:24.099] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 15:48:24.099] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 15:48:24.101] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 15:48:24.101] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 15:48:24.101] [INFO] register server module test_module
+[2022-01-07 15:48:24.121] [INFO] load config success, filepath ./conf/server.yaml
+
+[2022-01-07 15:53:27.325] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 15:53:27.325] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 15:53:27.325] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 15:53:27.328] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 15:53:27.328] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 15:53:27.328] [INFO] register server module test_module
+[2022-01-07 15:53:27.348] [INFO] load config success, filepath ./conf/server.yaml
+
+[2022-01-07 15:53:27.348] [INFO] log_path is ./log/stateless.log
+
+[2022-01-07 16:17:26.949] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 16:17:26.949] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:17:26.949] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:17:26.952] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:17:26.952] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:17:26.952] [INFO] register server module test_module
+[2022-01-07 16:17:26.972] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:17:26.972] [INFO] log_path is ./log/stateless.log
+
+[2022-01-07 16:23:31.797] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 16:23:31.797] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:23:31.797] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:23:31.800] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:23:31.800] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:23:31.800] [INFO] register server module test_module
+[2022-01-07 16:23:31.820] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:23:31.820] [INFO] log_path is ./log/stateless.log
+
+[2022-01-07 16:25:52.446] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 16:25:52.446] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:25:52.446] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:25:52.448] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:25:52.448] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:25:52.448] [INFO] register server module test_module
+[2022-01-07 16:25:52.468] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:25:52.469] [INFO] log_path is ./log/stateless.log
+[2022-01-07 16:26:41.899] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:26:41.899] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:26:41.901] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:26:41.901] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:26:41.901] [INFO] register server module test_module
+[2022-01-07 16:26:41.921] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:26:41.921] [INFO] log_path is ./log/stateless.log
+[2022-01-07 16:27:23.888] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:27:23.888] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:27:23.890] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:27:23.890] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:27:23.890] [INFO] register server module test_module
+[2022-01-07 16:27:23.910] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:27:23.911] [INFO] log_path is ./log/stateless.log
+[2022-01-07 16:29:59.725] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:29:59.725] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:29:59.728] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:29:59.728] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:29:59.728] [INFO] register server module test_module
+[2022-01-07 16:29:59.748] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:29:59.748] [INFO] log_path is ./log/stateless.log
+[2022-01-07 16:32:50.523] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:32:50.523] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:32:50.526] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:32:50.526] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:32:50.526] [INFO] register server module test_module
+[2022-01-07 16:32:50.546] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:32:50.546] [INFO] log_path is ./log/stateless.log
+[2022-01-07 16:32:57.909] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:32:57.909] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:32:57.912] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:32:57.912] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:32:57.912] [INFO] register server module test_module
+[2022-01-07 16:32:57.932] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:32:57.932] [INFO] log_path is ./log/stateless.log
+[2022-01-07 16:38:21.712] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 16:38:21.712] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:38:21.712] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:38:21.714] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:38:21.714] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:38:21.714] [INFO] register server module test_module
+[2022-01-07 16:38:21.735] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:38:21.736] [INFO] log_path is ./log/stateless.log
+[2022-01-07 16:38:47.262] [INFO] register plugin factory, key rpc_trpc
+[2022-01-07 16:38:47.262] [INFO] register plugin factory, key log_bingologger
+[2022-01-07 16:38:47.262] [INFO] register plugin factory, key mq_kafka
+[2022-01-07 16:38:47.264] [INFO] register plugin factory, key mq_pulsar
+[2022-01-07 16:38:47.265] [INFO] register plugin factory, key transport_tcp
+[2022-01-07 16:38:47.265] [INFO] register server module test_module
+[2022-01-07 16:38:47.285] [INFO] load config success, filepath ./conf/server.yaml
+[2022-01-07 16:38:47.285] [INFO] log_path is ./log/stateless.log

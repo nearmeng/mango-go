@@ -9,11 +9,13 @@ import (
 	"sync"
 	"time"
 
+	"github.com/nearmeng/mango-go/common/uid"
 	"github.com/nearmeng/mango-go/plugin/log"
 	"github.com/nearmeng/mango-go/plugin/transport"
 )
 
 type tcpConn struct {
+	connID        uint64
 	ctx           context.Context
 	lastReadTime  time.Time
 	lastWriteTime time.Time
@@ -35,6 +37,7 @@ func NewTcpConn(ctx context.Context, conn *net.TCPConn) *tcpConn {
 
 	tcpCtx := &tcpConn{
 		ctx:          ctx,
+		connID:       uid.GenerateUID(),
 		lastReadTime: time.Now(),
 		conn:         conn,
 		localAddr:    conn.LocalAddr(),
@@ -47,6 +50,10 @@ func NewTcpConn(ctx context.Context, conn *net.TCPConn) *tcpConn {
 	}
 
 	return tcpCtx
+}
+
+func (c *tcpConn) GetConnID() uint64 {
+	return c.connID
 }
 
 func (c *tcpConn) GetLocalAddr() (addr net.Addr) {
@@ -120,7 +127,7 @@ func (c *tcpConn) Read(targetBuff []byte) (int, error) {
 func (c *tcpConn) Recv() {
 	defer c.Close(false)
 
-	_transInst.eventHandler.OnOpened(c)
+	_transInst.eventHandler.OnConnOpened(c)
 
 	for {
 		select {
@@ -151,7 +158,7 @@ func (c *tcpConn) Close(active bool) error {
 	once.Do(func() {
 		_ = c.writer.Flush()
 
-		_transInst.eventHandler.OnClosed(c, active)
+		_transInst.eventHandler.OnConnClosed(c, active)
 
 		c.cancle()
 

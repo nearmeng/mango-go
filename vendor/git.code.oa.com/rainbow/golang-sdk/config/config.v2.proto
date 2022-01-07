@@ -1,0 +1,148 @@
+syntax = "proto3";
+
+package config.v2;
+
+service ConfigService {
+  //配置拉取
+  rpc PullConfigReq(ReqPullConfig) returns (RspPullConfig) {
+  } // @alias=/v2/getconfig/pull
+
+  //配置长轮询
+  rpc PollingReq(ReqPolling) returns (RspPolling) {
+  } // @alias=/v2/getconfig/poll
+
+  //配置订阅/增量推送 (未实现)
+  rpc SubscribeReq(stream ReqSubscribe) returns (stream RspSubscribe) {
+  } // @alias=/v2/getconfig/subscribe
+
+  // 心跳接口，记录客户端类型和版本
+  rpc Heartbeat(ReqHeartbeat) returns (RspHeartbeat) {}
+}
+
+message KeyValue {
+  string key = 1;   //配置中的key
+  string value = 2; //配置中的value
+  // DataType data_type = 3; //字段值类型
+}
+
+message TableColumnType {
+  string column = 1; // 字段名
+  //   NUMBER = 1;
+  //   STRING = 2;
+  //   TEXT = 3;
+  //   JSON = 4;
+  //   XML = 5;
+  //   FILE = 6;
+  //   TABLE = 7;
+  //   COLOR = 8;      // 颜色
+  //   PIC = 9;        // 图片
+  //   SELECT = 10;    // 下拉框
+  //   BOOL = 11;      // bool
+  //   AUTO_ID = 12;   // 自增id
+  //   TIMESTAMP = 13; // 修改时间
+  //   CREATOR = 14;   // 创建者
+  //   OWNER = 15;     // 负责人
+  //   URL =16;		  //链接
+  //   TIME =17;		  //时间
+  int32 data_type = 2; // 字段值类型
+}
+
+message KeyValueItem {
+  string group = 1;     // 配置group信息(如/集群/set/)
+  string version = 2;   // 配置版本,后台生成的唯一标识
+  int32 event_type = 3; // 配置变化类型 update=1、add=2、delete=3、all=4
+  repeated KeyValue key_values = 4;
+  int64 version_id = 5; // 版本id，每次发布都是单调递增的，即使回滚也是。
+  string version_name = 6; // 客户自定义的版本名
+  int32 struct_type = 7;   // 返回数据结构类型, kv=0、table=1
+  repeated TableColumnType column_types =
+      8; // 字段类型信息，因为有自动分组的问题，这个字段不能放在ConfigKeyValue下面
+  repeated string rows = 9; // table结构数据行
+  bool rows_end = 10;       // 标志是否结束行
+}
+
+message ConfigKeyValue {
+  string app_id = 1;
+  repeated KeyValueItem items = 2;
+}
+
+message ClientInfo {
+  string client_identified_name = 1;  //客户端标识名（uin、ip）
+  string client_identified_value = 2; //客户端标识值 （如12345）
+}
+
+message PollingItem {
+  string app_id = 1;  //项目ID
+  string group = 2;   //配置group
+  string version = 3; //配置版本
+  string key = 4;     //配置key(可选)
+  string env_name=5; //指定环境(可选)
+}
+
+message ReqPolling {
+  repeated ClientInfo client_infos = 1; //用户标识(可填写uin、ip等标识)
+  PollingItem polling_item = 2; //携带客户端存有的app_id、配置版本
+}
+
+message RspPolling {
+  int32 ret_code = 1; //返回码(0:请求成功, 111:无group读取权限)
+  string ret_msg = 2; //返回信息
+  ConfigKeyValue config = 3; //变化配置key/value
+}
+
+message ConfigKey {
+  string app_id = 1;  //项目ID
+  string group = 2;   //配置group信息(如/集群/set/，可选)
+  string version = 3; //本地配置版本号(可选)
+  string key = 4;     //配置中的key(可选)
+  // 起始id，必须是offset的倍数，范围[0 - ~)
+  int32 start = 5; // 仅table型数据支持该参数
+  // 偏移的id值，必须是10的n次方，大于0表示，使用分页，小于0不使用分页。
+  int32 offset = 6; // 仅table型数据支持该参数
+  string env_name=7; // 指定环境(可选)
+}
+
+message ReqPullConfig {
+  repeated ClientInfo client_infos = 1; //用户标识(可填写uin等标识)
+  ConfigKey pull_item = 2;              //包含appid、group、version、key
+}
+
+message RspPullConfig {
+  int32 ret_code = 1; //返回码(0:请求成功, 111:无group读取权限)
+  string ret_msg = 2; //返回信息
+  ConfigKeyValue config = 3;
+}
+
+message SubscribeItem {
+  string app_id = 1;         //订阅的配置项目ID
+  string path = 2;           //订阅的配置路径
+  string user_key_name = 3;  //用户标识名（uin、ip）
+  string user_key_value = 4; //用户标识值 （12432、1.1.1.1）
+}
+
+message ReqSubscribe {
+  string ip = 1; //客户端ip
+  string codec_type = 3;
+  bytes data = 4;
+  repeated SubscribeItem items = 5;
+}
+
+message RspSubscribe {
+  int32 ret_code = 1; //返回码
+  string ret_msg = 2; //返回信息
+  string type = 3;
+  bytes data = 4; // 配置信息
+}
+
+message ReqHeartbeat {
+  string terminal_id =
+      1; //终端id组成, sdk进程每次启动时生成: base64.encode(随机数|unixtime|进程ID)
+  string terminal_type =
+      2; //终端类型:c++-sdk;go-sdk;nodejs-sdk;python-sdk;java-sdk;agent
+  string version_name = 3; // sdk、agent版本名称
+}
+
+message RspHeartbeat {
+  int32 ret_code = 1;
+  string ret_msg = 2;
+}

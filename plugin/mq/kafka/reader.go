@@ -3,7 +3,6 @@ package kafka
 import (
 	"context"
 	"errors"
-	"fmt"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/nearmeng/mango-go/plugin/log"
@@ -25,7 +24,7 @@ func (r *kafkaReader) ReadMessage(ctx context.Context) (mq.Message, error) {
 		for {
 			m, err := r.consumer.ReadMessage(-1)
 			if err == nil {
-				fmt.Printf("Message on %s: %s\n", m.TopicPartition, string(m.Value))
+				log.Info("Message on %s: %s\n", m.TopicPartition, string(m.Value))
 				done <- m
 				return
 			} else {

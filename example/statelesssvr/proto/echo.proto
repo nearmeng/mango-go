@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package trpc.rstudio.echo;
+
+option go_package="./echo";
+
+service Echo {
+    rpc Echo(EchoReq) returns (EchoRsp);
+}
+
+message EchoReq {
+    string Message = 1;
+}
+
+message EchoRsp {
+    string Response = 1;
+}

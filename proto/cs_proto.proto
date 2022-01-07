@@ -1,0 +1,15 @@
+syntax = "proto3";
+package proto;
+option go_package = "/csproto";
+
+message CSHead
+{
+    int32 msgid     =   1;
+    int32 seqid     =   2;
+}
+
+message SCHead
+{
+    int32 msgid     =   1;
+    int32 seqid     =   2;
+}

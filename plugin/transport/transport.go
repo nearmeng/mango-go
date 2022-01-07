@@ -3,6 +3,7 @@ package transport
 import "net"
 
 type Conn interface {
+	GetConnID() uint64
 	GetLocalAddr() (addr net.Addr)
 	GetRemoteAddr() (addr net.Addr)
 	Send(data []byte) error
@@ -11,8 +12,8 @@ type Conn interface {
 }
 
 type EventHandler interface {
-	OnOpened(conn Conn)
-	OnClosed(conn Conn, active bool)
+	OnConnOpened(conn Conn)
+	OnConnClosed(conn Conn, active bool)
 	OnData(conn Conn, data []byte)
 }
 

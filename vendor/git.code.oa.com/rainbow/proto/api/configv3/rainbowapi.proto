@@ -1,0 +1,209 @@
+syntax = "proto3";
+
+package rainbowapi;
+
+service configs {
+  // getgroups 获取分组信息
+  rpc getgroups(ReqGetGroups) returns (RspGetGroups) {}
+  // getdatas 获取配置
+  rpc getdatas(ReqGetDatas) returns (RspGetDatas) {}
+  // getexes 获取可执行脚本
+  rpc getexes(ReqGetExes) returns (RspGetExes) {}
+  // poll 长轮训得到事件，用来监听事件
+  // 注意:
+  // 由于服务端会hold住请求60秒，所以请确保客户端访问服务端的超时时间要大于60秒
+  rpc poll(ReqPoll) returns (RspPoll) {}
+  // report 上报状态
+  rpc report(ReqReport) returns (RspReport) {}
+}
+
+message GroupInfo {
+  map<string, string> client_ids =
+      1; // 用户标识，支持多个，如: <ip,1.1.1.1>,<qq,123456>
+  string app_id = 2; // 项目ID = 1; // 分组的数据结构类型, kv=0、table=1、file=2
+  string group = 3; // 分组名
+  string env_name=4; //指定环境(可选)
+}
+
+message ReqGetGroups {
+  repeated GroupInfo groups = 1; // 已订阅的分组信息
+}
+
+message RspGetGroups {
+  int32 ret_code = 1;                 // 返回码
+  string ret_msg = 2;                 // 返回消息
+  repeated GroupInfo group_infos = 3; // 分组信息
+}
+
+message Options {
+  string client_ver_uuid =
+      1; // 上一次配置的版本uuid，也就是客户端当前的版本uuid(可选)
+  string assign_ver_uuid = 2; // 指定获取的版本，需要mode=2才会生效(可选)
+  string key = 3;             // 配置中的key(可选)
+  int32 last_id = 4;          // 分页的起始id
+  int32 page_size = 5; // 需要的行数
+}
+
+message ReqGetDatas {
+  enum Mode {
+    FULL = 0;   // 全量最新(默认)
+    INCR = 1;   // 增量
+    ASSIGN = 2; // 拉取指定版本配置
+  }
+
+  map<string, string> client_ids =
+      1; // 用户标识，支持多个，如: <ip,1.1.1.1>,<qq,123456>
+  string app_id = 2; // 应用id
+  string group = 3;  // 配置group名，如: dev.test
+  int32 mode = 4;    // 拉取模式
+  string env_name=5; //指定环境(可选)
+  Options opts = 20; // 定义为20，方便扩展其他字段
+}
+
+message KV {
+  string key = 1;   //配置中的key
+  string value = 2; //配置中的value
+  int32 data_type = 3; //可解析value类型: 0:string 1:file 2:嵌套kv 3:template
+  // DataType data_type = 3; //字段值类型
+}
+
+message KVList { repeated KV kvs = 1; }
+
+message TableList {
+  map<string, int32> column_types = 1; // 字段类型信息
+  repeated string rows = 2;            // table结构数据行
+}
+
+message FileData {
+  string name = 1;     // 文件名
+  string metadata = 2; // 元数据json
+  string compress = 3; // false:非压缩传输; true:压缩传输(agent/sdk须自动解压)
+  int32 type = 4; // 文件类型，比如，普通文件=0，模版文件=1
+}
+
+message FileDataList {
+  repeated FileData file_datas = 1; // 用户文件
+  string tmp_dir = 2;               // 保存文件的临时目录
+}
+
+message Item { // 单个配置项的信息
+  enum Struct {
+    KV = 0;    // kv
+    TABLE = 1; // table
+    FILE = 2;  // 文件
+  }
+
+  enum Event {
+    NONE = 0;
+    UPDATE = 1; // 有更新的数据
+    ADD = 2;    // 添加的数据
+    DELETE = 3; // 删除的数据
+    ALL = 4;    // 全量数据
+  }
+
+  int32 struct_type = 1; // 返回数据结构类型, kv=0、table=1、file=2
+  string ver_uuid = 2;   // 配置版本,后台生成的唯一标识
+  int32 event_type = 3; // 配置变化类型 update=1、add=2、delete=3、all=4
+  uint32 ver_id = 4; // 版本id，每次发布都是单调递增的，即使回滚也是。
+  string ver_name = 5; // 客户自定义的版本名
+  bool rows_end = 6;   // 标志是否结束行
+  oneof datas {
+    KVList kvs = 20;         // kv型数据
+    TableList tables = 21;   // table型数据
+    FileDataList files = 22; // 普通文件
+  }
+}
+
+message RspGetDatas {
+  int32 ret_code = 1;       // 返回码
+  string ret_msg = 2;       // 返回消息
+  string app_id = 3;        // 应用id
+  string group = 4;         // 配置group名，如: dev.test
+  repeated Item items = 20; // 配置项信息
+}
+
+message ReqGetExes {
+  enum Type {
+    ALL = 0;   // 获取所有脚本
+    INIT = 1;  // 初始化脚本
+    PRE = 2;   // 前置脚本
+    AFTER = 3; // 后置脚本
+  }
+
+  map<string, string> client_ids =
+      1; // 用户标识，支持多个，如: <ip,1.1.1.1>,<qq,123456>
+  string app_id = 2; // 应用id
+  string group = 3;  // 配置group名，如: dev.test
+  int32 type = 4;    // 拉取的脚本类型
+  string env_name=5; //指定环境(可选)
+}
+
+message ExeData {
+  int32 type = 1;      // 脚本的类型
+  string contents = 2; // 脚本内容
+}
+
+message RspGetExes {
+  int32 ret_code = 1;         // 返回码
+  string ret_msg = 2;         // 返回消息
+  string app_id = 3;          // 应用id
+  string group = 4;           // 配置group名，如: dev.test
+  repeated ExeData datas = 5; // 脚本数据
+}
+
+message WatchGroup {
+  enum Op {
+    NONE = 0;
+    ADD = 1;
+    DEL = 2;
+  }
+
+  map<string, string> client_ids =
+      1; // 用户标识，支持多个，如: <ip,1.1.1.1>,<qq,123456>
+  string app_id = 2;   // 应用id
+  string group = 3;    // 分组名
+  string ver_uuid = 4; // 版本uuid
+  int32 op = 5; // 只有返回的msg_type=1时才有意义，表示变化的操作，add=1，del=2
+  string env_name=6; //指定环境(可选)
+  string key=7; 
+}
+
+message ReqPoll {
+  repeated WatchGroup groups = 1; // 监听的分组
+}
+
+message RspPoll {
+  enum MsgType {
+    NONE = 0;
+    GroupSubscribe = 1;
+    GroupDataChange = 2;
+  }
+
+  int32 ret_code = 1; // 返回码
+  string ret_msg = 2; // 返回消息
+  int32 msg_type = 3; // 1:获取可订阅的分组；2：监听分组更新；
+  repeated WatchGroup groups = 4; // 有变化的分组
+}
+
+message ReqReport {
+  enum Type {
+    NONE = 0;
+    FILE = 1;     // 文件下载结果上报
+    TEMPLATE = 2; // 模版渲染结果上报
+  }
+
+  map<string, string> client_ids =
+      1;          // 用户标识，支持多个，如: <ip,1.1.1.1>,<qq,123456>
+  int32 type = 2; // 1: 文件下载结果上报，2: 模版渲染结果上报
+  string app_id = 3;   // 项目ID
+  string group = 4;    // 分组名
+  string ver_uuid = 5; // 版本uuid
+  int32 status = 6;    // 执行状态
+  string exe_msg = 7;  // 执行信息(json)
+  string env_name = 8; //指定环境(可选)
+}
+
+message RspReport {
+  int32 ret_code = 1; // 返回码
+  string ret_msg = 2; // 返回消息
+}

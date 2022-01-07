@@ -1,0 +1,9 @@
+type: google.api.Service
+config_version: 3
+http:
+ rules:
+ - selector: tpstelemetry.proto.operation.OperationService.SetOperation
+   post: /api/operation
+   body: "*"
+ - selector: tpstelemetry.proto.operation.OperationService.GetOperation
+   get: /api/operation/tenant/{tenant}/app/{app}/server/{server}

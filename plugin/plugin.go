@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/nearmeng/mango-go/plugin/log"
 	"github.com/spf13/viper"
 )
 
@@ -15,6 +16,7 @@ type PluginFactory interface {
 	Setup(*viper.Viper) (interface{}, error)
 	Destroy(interface{}) error
 	Reload(interface{}, map[string]interface{}) error
+	Mainloop(interface{})
 }
 
 var (
@@ -30,7 +32,7 @@ func RegisterPluginFactory(f PluginFactory) {
 	key := constructPluginKey(f.Type(), f.Name())
 	_pluginFactoryMgr[key] = f
 
-	fmt.Printf("register plugin factory, key %s\n", key)
+	log.Info("register plugin factory, key %s", key)
 }
 
 func GetPluginInst(typ string, name string) interface{} {
@@ -47,14 +49,14 @@ func GetPluginInst(typ string, name string) interface{} {
 func registerPluginInst(key string, plugin interface{}) {
 	_pluginMgr[key] = plugin
 
-	fmt.Printf("register plugin inst, key %s\n", key)
+	log.Info("register plugin inst, key %s", key)
 }
 
 func constructPluginKey(typ string, name string) string {
 	return fmt.Sprintf("%s_%s", typ, name)
 }
 
-func InitPlugin(v *viper.Viper) error {
+func Init(v *viper.Viper) error {
 	var cfg PluginConfig
 
 	err := v.Unmarshal(&cfg)
@@ -62,17 +64,37 @@ func InitPlugin(v *viper.Viper) error {
 		return fmt.Errorf("unmarshal failed for %w", err)
 	}
 
+	//init log first
+	s, ok := cfg["log"]
+	if ok {
+		for n, _ := range s {
+			f := getPluginFactory("log", n)
+			if f != nil {
+				plugin, err := f.Setup(v.Sub("log").Sub(n))
+				if err != nil {
+					return fmt.Errorf("log plugin init failed")
+				}
+
+				registerPluginInst(constructPluginKey("log", n), plugin)
+			}
+		}
+	}
+
 	for t, s := range cfg {
+		if t == "log" {
+			continue
+		}
+
 		for n, _ := range s {
 			f := getPluginFactory(t, n)
 			if f == nil {
 				return fmt.Errorf("get plugin factory failed, type %s name %s", t, n)
 			}
 
-			fmt.Printf("init plugin %s %s\n", t, n)
+			log.Info("init plugin %s %s", t, n)
 
-			plugin, error := f.Setup(v.Sub(t).Sub(n))
-			if error != nil {
+			plugin, err := f.Setup(v.Sub(t).Sub(n))
+			if err != nil {
 				return fmt.Errorf("plugin setup failed, type %s name %s", t, n)
 			}
 
@@ -83,7 +105,25 @@ func InitPlugin(v *viper.Viper) error {
 	return nil
 }
 
-func ReloadPlugin(v *viper.Viper) error {
+func Reload(v *viper.Viper) error {
+	return nil
+}
+
+func Mainloop() {
+	for k, p := range _pluginMgr {
+		f := getPluginFactoryByKey(k)
+		go f.Mainloop(p)
+	}
+}
+
+func Destroy() error {
+	for k, p := range _pluginMgr {
+		log.Info("begin destroy plugin %s", k)
+
+		f := getPluginFactoryByKey(k)
+		f.Destroy(p)
+	}
+
 	return nil
 }
 
@@ -92,5 +132,12 @@ func getPluginFactory(t string, n string) PluginFactory {
 	defer _pluginFactoryLock.RUnlock()
 
 	key := constructPluginKey(t, n)
+	return _pluginFactoryMgr[key]
+}
+
+func getPluginFactoryByKey(key string) PluginFactory {
+	_pluginFactoryLock.RLock()
+	defer _pluginFactoryLock.RUnlock()
+
 	return _pluginFactoryMgr[key]
 }

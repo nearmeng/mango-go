@@ -1,8 +1,12 @@
 package module
 
 import (
+	"github.com/nearmeng/mango-go/plugin"
 	"github.com/nearmeng/mango-go/plugin/log"
+	"github.com/nearmeng/mango-go/plugin/rpc/trpc"
 	"github.com/nearmeng/mango-go/server_base/app"
+
+	pb "github.com/nearmeng/mango-go/example/statelesssvr/proto/echo"
 )
 
 type TestModule struct {
@@ -12,6 +16,10 @@ type TestModule struct {
 func (m *TestModule) Init() error {
 
 	m.testValue = 1
+
+	r := plugin.GetPluginInst("rpc", "trpc").(*trpc.TrpcServer)
+	pb.RegisterEchoService(r.GetServer(), &echoServiceImpl{})
+
 	log.Info("test module init")
 
 	return nil

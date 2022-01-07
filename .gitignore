@@ -1,0 +1,4 @@
+example/statelesssvr/statelesssvr_default.log
+example/statelesssvr/trpc.log
+example/statelesssvr/log/*
+example/statelesssvr/polaris/log/base/polaris.log

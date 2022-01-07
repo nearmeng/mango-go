@@ -1,17 +1,24 @@
 package main
 
 import (
-	"context"
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
 	"strconv"
 
 	_ "github.com/nearmeng/mango-go/example/statelesssvr/module"
-	"github.com/nearmeng/mango-go/plugin"
-	"github.com/nearmeng/mango-go/plugin/mq/pulsar"
+	"github.com/nearmeng/mango-go/plugin/log"
 	"github.com/nearmeng/mango-go/plugin/transport"
 	"github.com/nearmeng/mango-go/server_base/app"
+
+	_ "git.code.oa.com/tpstelemetry/tps-sdk-go/instrumentation/trpctelemetry"
+	_ "git.code.oa.com/trpc-go/trpc-config-rainbow"
+	_ "git.code.oa.com/trpc-go/trpc-filter/debuglog"
+	_ "git.code.oa.com/trpc-go/trpc-filter/recovery"
+	_ "git.code.oa.com/trpc-go/trpc-log-atta"
+	_ "git.code.oa.com/trpc-go/trpc-metrics-m007"
+	_ "git.code.oa.com/trpc-go/trpc-metrics-runtime"
+	_ "git.code.oa.com/trpc-go/trpc-naming-polaris"
 )
 
 type EventMessage struct {
@@ -57,12 +64,12 @@ func (e *EventMessage) Topic() string {
 type eventTcp struct {
 }
 
-func (*eventTcp) OnOpened(conn transport.Conn) {
-	fmt.Printf("get conn %s connect\n", conn.GetRemoteAddr().String())
+func (*eventTcp) OnConnOpened(conn transport.Conn) {
+	log.Info("get conn %s connect\n", conn.GetRemoteAddr().String())
 }
 
-func (*eventTcp) OnClosed(conn transport.Conn, active bool) {
-	fmt.Printf("get conn %s closed active %t\n", conn.GetRemoteAddr().String(), active)
+func (*eventTcp) OnConnClosed(conn transport.Conn, active bool) {
+	log.Info("get conn %s closed active %t\n", conn.GetRemoteAddr().String(), active)
 
 }
 
@@ -90,57 +97,59 @@ func main() {
 		panic(err)
 	}
 
-	pulsarIns := plugin.GetPluginInst("mq", "pulsar").(*pulsar.PulsarClient)
-	kreader := pulsarIns.GetReader("reader1")
-	if kreader == nil {
-		fmt.Printf("reader is nil")
-		return
-	}
+	/*
 
-	kwriter := pulsarIns.GetWriter("writer1")
-	if kwriter == nil {
-		fmt.Printf("writer is nil")
-	}
+		pulsarIns := plugin.GetPluginInst("mq", "pulsar").(*pulsar.PulsarClient)
+		kreader := pulsarIns.GetReader("reader1")
+		if kreader == nil {
+			fmt.Printf("reader is nil")
+			return
+		}
 
-	ctx := context.Background()
+		kwriter := pulsarIns.GetWriter("writer1")
+		if kwriter == nil {
+			fmt.Printf("writer is nil")
+		}
 
-	_, err = kwriter.WriteMessage(ctx, &EventMessage{
-		UserId:    1,
-		FightId:   2,
-		EventType: "type_b",
-		AttackSum: 10,
-	})
-	if err != nil {
-		fmt.Printf("writer failed for %v", err)
-		return
-	}
+		ctx := context.Background()
 
-	m1, err := kreader.ReadMessage(ctx)
-	if err != nil {
-		panic(err)
-	}
+		_, err = kwriter.WriteMessage(ctx, &EventMessage{
+			UserId:    1,
+			FightId:   2,
+			EventType: "type_b",
+			AttackSum: 10,
+		})
+		if err != nil {
+			fmt.Printf("writer failed for %v", err)
+			return
+		}
 
-	fmt.Printf("read msg %v\n", m1)
+		m1, err := kreader.ReadMessage(ctx)
+		if err != nil {
+			panic(err)
+		}
 
-	kreader.Ack(ctx, m1)
-	fmt.Printf("ack finished\n")
+		fmt.Printf("read msg %v\n", m1)
 
-	kreader.Close()
-	fmt.Printf("reader closed\n")
+		kreader.Ack(ctx, m1)
+		fmt.Printf("ack finished\n")
+
+		kreader.Close()
+		fmt.Printf("reader closed\n")
+	*/
 
 	/*
 		tcpIns := plugin.GetPluginInst("transport", "tcp").(*tcp.TcpTransport)
 
 		tcpIns.Init(transport.Options{EventHandler: &eventTcp{}})
-
-		server.Mainloop()
-
-		tcpIns.Uninit()
-
-		err = server.Fini()
-		if err != nil {
-			fmt.Printf("server fini failed")
-		}
 	*/
 
+	server.Mainloop()
+
+	//tcpIns.Uninit()
+
+	err = server.Fini()
+	if err != nil {
+		log.Info("server fini failed")
+	}
 }

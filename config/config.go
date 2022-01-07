@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/nearmeng/mango-go/plugin/log"
 	"github.com/spf13/viper"
 )
 
@@ -62,8 +63,7 @@ func loadConfig() error {
 
 	_config.isUseBak = !_config.isUseBak
 
-	fmt.Printf("load config success, filepath %s\n", _config.cfgFilePath)
-
+	log.Info("load config success, filepath %s", _config.cfgFilePath)
 	return nil
 }
 

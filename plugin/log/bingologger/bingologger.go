@@ -56,7 +56,7 @@ func (f *factory) Name() string {
 func (f *factory) Setup(v *viper.Viper) (interface{}, error) {
 	var cfg LogCfg
 
-	fmt.Printf("log_path is %s\n", v.GetString("path"))
+	log.Info("log_path is %s", v.GetString("path"))
 	//if err := mapstructure.Decode(c, &cfg); err != nil {
 	if err := v.Unmarshal(&cfg); err != nil {
 		return nil, err
@@ -84,6 +84,9 @@ func (f *factory) Destroy(i interface{}) error {
 
 	log.Info("Destory logger only exec sync")
 	return nil
+}
+
+func (f *factory) Mainloop(interface{}) {
 }
 
 // Reload reload config.

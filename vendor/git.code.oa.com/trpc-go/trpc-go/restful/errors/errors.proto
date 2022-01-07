@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package errors;
+
+option go_package = ".;errors";
+
+// proto 形式表示的 tRPC 错误
+message err {
+    // 错误码
+    int32 code = 1;
+    // 错误信息
+    string message = 2;
+}

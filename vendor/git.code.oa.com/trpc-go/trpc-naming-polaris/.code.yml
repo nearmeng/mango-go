@@ -1,0 +1,31 @@
+branch:
+  trunk_name: "master"
+  branch_type_A:
+    tag:
+      pattern: "v${versionnumber}"
+      versionnumber: "{Major-version}.{Feature-version}.{Fix-version}"
+
+artifact:
+  - path: "/"
+    artifact_name : "trpc-naming-polaris"
+    dependence_conf: "go.mod"
+    repository_url: "http://git.code.oa.com/trpc-go/trpc-naming-polaris"
+
+source:
+  test_source:
+    filepath_regex: [".*_test.go$"]
+  auto_generate_source:
+    filepath_regex: [".*.pb.go$", ".*.trpc.go$", ".*_mock.go$"]
+
+code_review:
+  restrict_labels: ["CR-编程规范", "CR-业务逻辑","CR-边界逻辑","CR-代码架构","CR-性能影响","CR-安全性","CR-可测试性","CR-可读性"]
+  reviewers :  ["misakachen"]
+  necessary_reviewers :  ["misakachen"]
+
+file :
+  - path: "/.*"
+    owners :  ["misakachen"]
+    owner_rule: 0
+    code_review:
+      reviewers :  ["misakachen"]
+      necessary_reviewers :  ["misakachen"]

@@ -2,7 +2,6 @@ package kafka
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/confluentinc/confluent-kafka-go/kafka"
 	"github.com/nearmeng/mango-go/plugin/log"
@@ -33,26 +32,24 @@ func NewClient(conf *mq.MQConfig) (mq.Client, error) {
 
 	for _, readerConf := range conf.ReaderConfig {
 
-		fmt.Printf("reader conf is %v\n", readerConf)
 		reader, err := cli.NewReader(context.Background(), &readerConf)
 		if err != nil {
 			return nil, err
 		}
 
 		cli.mqReader[readerConf.ReaderName] = reader
-		fmt.Printf("kafka new reader %s\n", readerConf.ReaderName)
+		log.Info("kafka new reader %s\n", readerConf.ReaderName)
 	}
 
 	for _, writerConf := range conf.WriterConfig {
 
-		fmt.Printf("writer conf is %v\n", writerConf)
 		writer, err := cli.NewWriter(context.Background(), &writerConf)
 		if err != nil {
 			return nil, err
 		}
 
 		cli.mqWriter[writerConf.WriterName] = writer
-		fmt.Printf("kafka new writer %s\n", writerConf.WriterName)
+		log.Info("kafka new writer %s\n", writerConf.WriterName)
 	}
 
 	return cli, nil

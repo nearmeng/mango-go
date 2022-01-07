@@ -3,7 +3,6 @@ package transport
 import (
 	"encoding/binary"
 	"errors"
-	"fmt"
 	"net"
 
 	"github.com/nearmeng/mango-go/plugin/log"
@@ -65,7 +64,7 @@ func (codec *DefaultCodec) Decode(c Conn) ([]byte, error) {
 		BodySize:   binary.LittleEndian.Uint32(headBuff[4:8]),
 	}
 
-	fmt.Printf("decode recv headbuff size %d header_size %d body_size %d\n", n, header.HeaderSize, header.BodySize)
+	log.Info("decode recv headbuff size %d header_size %d body_size %d\n", n, header.HeaderSize, header.BodySize)
 
 	dataBuff := make([]byte, 4+header.HeaderSize+header.BodySize)
 	binary.LittleEndian.PutUint32(dataBuff[0:4], header.HeaderSize)
@@ -87,21 +86,29 @@ func (codec *DefaultCodec) Decode(c Conn) ([]byte, error) {
 		return nil, errors.New("body not match")
 	}
 
-	fmt.Printf("decode recv bodyBuff size %d\n", n)
+	log.Info("decode recv bodyBuff size %d\n", n)
 
 	return dataBuff, nil
 }
 
 func (codec *DefaultCodec) Encode(c Conn, buff []byte) ([]byte, error) {
 	headerSize := binary.LittleEndian.Uint32(buff)
-	pkgLen := len(buff) - 4
+	bodySize := len(buff) - 4 - int(headerSize)
 
-	result := make([]byte, _headSize+pkgLen)
+	result := make([]byte, _headSize+int(headerSize)+bodySize)
 
 	binary.LittleEndian.PutUint32(result[0:4], headerSize)
-	binary.LittleEndian.PutUint32(result[4:8], uint32(pkgLen))
+	binary.LittleEndian.PutUint32(result[4:8], uint32(bodySize))
 
 	copy(result[8:], buff[4:])
 
 	return result, nil
 }
+
+// application data protocol
+//0-----------------4-------------------------------------------------------
+//|----headerSize---|---------header-------|--------data--------|
+
+// transport data protocol
+//0-----------------4----------------8----------------------------------------
+//|----headerSize---|----bodySize----|-----header-------|--------data--------|

@@ -3,17 +3,26 @@ module github.com/nearmeng/mango-go
 go 1.15
 
 require (
+	git.code.oa.com/tpstelemetry/tps-sdk-go/instrumentation/trpctelemetry v0.4.16
+	git.code.oa.com/trpc-go/trpc-config-rainbow v0.1.19
+	git.code.oa.com/trpc-go/trpc-filter/debuglog v0.1.3
+	git.code.oa.com/trpc-go/trpc-filter/recovery v0.1.2
+	git.code.oa.com/trpc-go/trpc-go v0.8.0
+	git.code.oa.com/trpc-go/trpc-log-atta v0.1.13
+	git.code.oa.com/trpc-go/trpc-metrics-m007 v0.4.7
+	git.code.oa.com/trpc-go/trpc-metrics-runtime v0.1.7
+	git.code.oa.com/trpc-go/trpc-naming-polaris v0.3.1
 	github.com/AthenZ/athenz v1.10.40 // indirect
 	github.com/DataDog/zstd v1.5.0 // indirect
-	github.com/apache/pulsar-client-go v0.7.0 // indirect
+	github.com/apache/pulsar-client-go v0.7.0
 	github.com/apache/pulsar-client-go/oauth2 v0.0.0-20211114184309-7773d27562ce // indirect
-	github.com/confluentinc/confluent-kafka-go v1.7.0 // indirect
+	github.com/confluentinc/confluent-kafka-go v1.7.0
 	github.com/danieljoos/wincred v1.1.2 // indirect
 	github.com/dvsekhvalnov/jose2go v1.5.0 // indirect
 	github.com/form3tech-oss/jwt-go v3.2.5+incompatible // indirect
-	github.com/go-redis/redis/v8 v8.11.4 // indirect
-	github.com/go-sql-driver/mysql v1.6.0 // indirect
-	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/go-redis/redis/v8 v8.11.4
+	github.com/go-sql-driver/mysql v1.6.0
+	github.com/golang/protobuf v1.5.2
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/keybase/go-keychain v0.0.0-20211119201326-e02f34051621 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
@@ -21,10 +30,10 @@ require (
 	github.com/linkedin/goavro/v2 v2.10.1 // indirect
 	github.com/mitchellh/mapstructure v1.4.2
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
-	github.com/pkg/errors v0.9.1 // indirect
+	github.com/pkg/errors v0.9.1
 	github.com/prometheus/common v0.32.1 // indirect
 	github.com/prometheus/procfs v0.7.3 // indirect
-	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/viper v1.9.0
 	github.com/stretchr/testify v1.7.0
 	go.uber.org/atomic v1.9.0

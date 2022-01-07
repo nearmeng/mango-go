@@ -93,13 +93,8 @@ func (s *serverApp) Init() error {
 	//kill pre process
 	process.KillPre(s.serverID)
 
-	//signal
-	signal.RegisterSignalHandler([]os.Signal{syscall.SIGUSR1}, s.Quit)
-	signal.RegisterSignalHandler([]os.Signal{syscall.SIGUSR2}, s.Reload)
-	signal.StartSignal()
-
 	//plugin
-	err = plugin.InitPlugin(conf.Sub("plugin"))
+	err = plugin.Init(conf.Sub("plugin"))
 	if err != nil {
 		return err
 	}
@@ -149,6 +144,12 @@ func (s *serverApp) Fini() error {
 		}
 	}
 
+	//plugin
+	err := plugin.Destroy()
+	if err != nil {
+		log.Info("destroy plugin failed for %v", err)
+	}
+
 	log.Info("server %s fini success", s.serverName)
 	return nil
 }
@@ -158,6 +159,13 @@ func (s *serverApp) Mainloop() {
 	interval := time.Second / time.Duration(_serverFrame)
 	t := time.NewTicker(interval)
 	defer t.Stop()
+
+	plugin.Mainloop()
+
+	//signal
+	signal.RegisterSignalHandler([]os.Signal{syscall.SIGINT, syscall.SIGUSR1}, s.Quit)
+	signal.RegisterSignalHandler([]os.Signal{syscall.SIGUSR2}, s.Reload)
+	signal.StartSignal()
 
 	for {
 		finished := false
@@ -200,7 +208,7 @@ func (s *serverApp) Reload() {
 	}
 
 	conf := config.GetConfig()
-	err = plugin.ReloadPlugin(conf)
+	err = plugin.Reload(conf)
 	if err != nil {
 		log.Error("plugin reload failed for %m", err)
 	}
@@ -213,6 +221,7 @@ func (s *serverApp) Reload() {
 }
 
 func RegisterModule(m ServerModule) error {
+	log.Info("register server module %s", m.GetName())
 	return _moduleCont.registerModule(m)
 }
 
