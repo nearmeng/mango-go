@@ -20,7 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type CSLogin struct {
+type CS_LOGIN struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -28,8 +28,8 @@ type CSLogin struct {
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 }
 
-func (x *CSLogin) Reset() {
-	*x = CSLogin{}
+func (x *CS_LOGIN) Reset() {
+	*x = CS_LOGIN{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_cs_login_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -37,13 +37,13 @@ func (x *CSLogin) Reset() {
 	}
 }
 
-func (x *CSLogin) String() string {
+func (x *CS_LOGIN) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CSLogin) ProtoMessage() {}
+func (*CS_LOGIN) ProtoMessage() {}
 
-func (x *CSLogin) ProtoReflect() protoreflect.Message {
+func (x *CS_LOGIN) ProtoReflect() protoreflect.Message {
 	mi := &file_cs_login_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -55,19 +55,19 @@ func (x *CSLogin) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CSLogin.ProtoReflect.Descriptor instead.
-func (*CSLogin) Descriptor() ([]byte, []int) {
+// Deprecated: Use CS_LOGIN.ProtoReflect.Descriptor instead.
+func (*CS_LOGIN) Descriptor() ([]byte, []int) {
 	return file_cs_login_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CSLogin) GetName() string {
+func (x *CS_LOGIN) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-type SCLogin struct {
+type SC_LOGIN struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -75,8 +75,8 @@ type SCLogin struct {
 	Success int32 `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 }
 
-func (x *SCLogin) Reset() {
-	*x = SCLogin{}
+func (x *SC_LOGIN) Reset() {
+	*x = SC_LOGIN{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_cs_login_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -84,13 +84,13 @@ func (x *SCLogin) Reset() {
 	}
 }
 
-func (x *SCLogin) String() string {
+func (x *SC_LOGIN) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SCLogin) ProtoMessage() {}
+func (*SC_LOGIN) ProtoMessage() {}
 
-func (x *SCLogin) ProtoReflect() protoreflect.Message {
+func (x *SC_LOGIN) ProtoReflect() protoreflect.Message {
 	mi := &file_cs_login_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -102,12 +102,12 @@ func (x *SCLogin) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SCLogin.ProtoReflect.Descriptor instead.
-func (*SCLogin) Descriptor() ([]byte, []int) {
+// Deprecated: Use SC_LOGIN.ProtoReflect.Descriptor instead.
+func (*SC_LOGIN) Descriptor() ([]byte, []int) {
 	return file_cs_login_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *SCLogin) GetSuccess() int32 {
+func (x *SC_LOGIN) GetSuccess() int32 {
 	if x != nil {
 		return x.Success
 	}
@@ -118,12 +118,13 @@ var File_cs_login_proto protoreflect.FileDescriptor
 
 var file_cs_login_proto_rawDesc = []byte{
 	0x0a, 0x0e, 0x63, 0x73, 0x5f, 0x6c, 0x6f, 0x67, 0x69, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
-	0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x1d, 0x0a, 0x07, 0x43, 0x53, 0x4c, 0x6f, 0x67,
-	0x69, 0x6e, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x23, 0x0a, 0x07, 0x53, 0x43, 0x4c, 0x6f, 0x67, 0x69,
-	0x6e, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x05, 0x52, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x42, 0x0a, 0x5a, 0x08, 0x2f,
-	0x63, 0x73, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x1e, 0x0a, 0x08, 0x43, 0x53, 0x5f, 0x4c, 0x4f,
+	0x47, 0x49, 0x4e, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x24, 0x0a, 0x08, 0x53, 0x43, 0x5f, 0x4c, 0x4f,
+	0x47, 0x49, 0x4e, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x42, 0x0a, 0x5a,
+	0x08, 0x2f, 0x63, 0x73, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x33,
 }
 
 var (
@@ -140,8 +141,8 @@ func file_cs_login_proto_rawDescGZIP() []byte {
 
 var file_cs_login_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_cs_login_proto_goTypes = []interface{}{
-	(*CSLogin)(nil), // 0: proto.CSLogin
-	(*SCLogin)(nil), // 1: proto.SCLogin
+	(*CS_LOGIN)(nil), // 0: proto.CS_LOGIN
+	(*SC_LOGIN)(nil), // 1: proto.SC_LOGIN
 }
 var file_cs_login_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for method output_type
@@ -158,7 +159,7 @@ func file_cs_login_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_cs_login_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CSLogin); i {
+			switch v := v.(*CS_LOGIN); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -170,7 +171,7 @@ func file_cs_login_proto_init() {
 			}
 		}
 		file_cs_login_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SCLogin); i {
+			switch v := v.(*SC_LOGIN); i {
 			case 0:
 				return &v.state
 			case 1:

@@ -10,10 +10,12 @@ import (
 	"github.com/nearmeng/mango-go/config"
 	"github.com/nearmeng/mango-go/plugin"
 	"github.com/nearmeng/mango-go/plugin/log"
+	"github.com/nearmeng/mango-go/plugin/transport"
 
 	_ "github.com/nearmeng/mango-go/plugin/log/bingologger"
 	_ "github.com/nearmeng/mango-go/plugin/mq/kafka"
 	_ "github.com/nearmeng/mango-go/plugin/mq/pulsar"
+	"github.com/nearmeng/mango-go/plugin/transport/tcp"
 	_ "github.com/nearmeng/mango-go/plugin/transport/tcp"
 
 	_ "github.com/nearmeng/mango-go/server_data/res"
@@ -98,6 +100,10 @@ func (s *serverApp) Init() error {
 	if err != nil {
 		return err
 	}
+
+	//plugin manual init
+	tcpIns := plugin.GetPluginInst("transport", "tcp").(*tcp.TcpTransport)
+	tcpIns.Init(transport.Options{EventHandler: &eventTcp{}})
 
 	//module
 	for _, module := range _moduleCont.moduleCont {

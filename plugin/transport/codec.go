@@ -49,13 +49,13 @@ func (codec *DefaultCodec) Decode(c Conn) ([]byte, error) {
 			log.Error("client %s is stopped for timeout", c.GetRemoteAddr().String())
 			return nil, err
 		} else {
-			log.Error("client %s is stopped for err %s", c.GetRemoteAddr().String(), err.Error())
+			log.Info("client %s is stopped for err %s", c.GetRemoteAddr().String(), err.Error())
 			return nil, err
 		}
 	}
 
 	if n != _headSize {
-		log.Error("client %s head is not match", c.GetRemoteAddr().String())
+		log.Error("client %s head is not match %d err %v", c.GetRemoteAddr().String(), n, err)
 		return nil, errors.New("head not match")
 	}
 
@@ -64,7 +64,7 @@ func (codec *DefaultCodec) Decode(c Conn) ([]byte, error) {
 		BodySize:   binary.LittleEndian.Uint32(headBuff[4:8]),
 	}
 
-	log.Info("decode recv headbuff size %d header_size %d body_size %d\n", n, header.HeaderSize, header.BodySize)
+	log.Info("decode recv headbuff size %d header_size %d body_size %d", n, header.HeaderSize, header.BodySize)
 
 	dataBuff := make([]byte, 4+header.HeaderSize+header.BodySize)
 	binary.LittleEndian.PutUint32(dataBuff[0:4], header.HeaderSize)
@@ -86,7 +86,7 @@ func (codec *DefaultCodec) Decode(c Conn) ([]byte, error) {
 		return nil, errors.New("body not match")
 	}
 
-	log.Info("decode recv bodyBuff size %d\n", n)
+	log.Info("decode recv bodyBuff size %d", n)
 
 	return dataBuff, nil
 }

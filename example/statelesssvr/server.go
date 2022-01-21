@@ -1,14 +1,11 @@
 package main
 
 import (
-	"encoding/binary"
 	"encoding/json"
-	"fmt"
 	"strconv"
 
 	_ "github.com/nearmeng/mango-go/example/statelesssvr/module"
 	"github.com/nearmeng/mango-go/plugin/log"
-	"github.com/nearmeng/mango-go/plugin/transport"
 	"github.com/nearmeng/mango-go/server_base/app"
 
 	_ "git.code.oa.com/tpstelemetry/tps-sdk-go/instrumentation/trpctelemetry"
@@ -61,33 +58,6 @@ func (e *EventMessage) Topic() string {
 	return "test_kafka"
 }
 
-type eventTcp struct {
-}
-
-func (*eventTcp) OnConnOpened(conn transport.Conn) {
-	log.Info("get conn %s connect\n", conn.GetRemoteAddr().String())
-}
-
-func (*eventTcp) OnConnClosed(conn transport.Conn, active bool) {
-	log.Info("get conn %s closed active %t\n", conn.GetRemoteAddr().String(), active)
-
-}
-
-func (*eventTcp) OnData(conn transport.Conn, data []byte) {
-	headerSize := binary.LittleEndian.Uint32(data)
-	dataStr := string(data[4:])
-	fmt.Printf("conn %s get header_size %d data %s\n", conn.GetRemoteAddr().String(), headerSize, dataStr)
-
-	sendData := []byte(string("hello client"))
-	sendHeaderSize := len(sendData)
-	sendBuff := make([]byte, 4+sendHeaderSize)
-	binary.LittleEndian.PutUint32(sendBuff[0:4], uint32(sendHeaderSize))
-
-	copy(sendBuff[4:], sendData)
-
-	_ = conn.Send(sendBuff)
-}
-
 func main() {
 
 	server := app.NewServerApp("stateless_svr")
@@ -136,12 +106,6 @@ func main() {
 
 		kreader.Close()
 		fmt.Printf("reader closed\n")
-	*/
-
-	/*
-		tcpIns := plugin.GetPluginInst("transport", "tcp").(*tcp.TcpTransport)
-
-		tcpIns.Init(transport.Options{EventHandler: &eventTcp{}})
 	*/
 
 	server.Mainloop()

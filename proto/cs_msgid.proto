@@ -6,7 +6,7 @@ enum CSMessageID
 {
     cs_message_begin    =   0;
 
-    cs_message_login    =   1;
+    cs_login    =   1;
 
     cs_message_end      =   0xFFF;
 }
@@ -15,7 +15,7 @@ enum SCMessageID
 {
     sc_message_begin    =   0;
 
-    sc_message_login    =   1;
+    sc_login    =   1;
 
     sc_message_end      =   0xFFF;
 }

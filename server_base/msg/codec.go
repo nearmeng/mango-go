@@ -13,7 +13,7 @@ import (
 )
 
 type CSCodec interface {
-	Encode(header *csproto.CSHead, body proto.Message) ([]byte, error)
+	Encode(header *csproto.SCHead, body proto.Message) ([]byte, error)
 	Decode(data []byte) (*csproto.CSHead, proto.Message)
 }
 
@@ -37,7 +37,7 @@ func getCodec(t string) CSCodec {
 type DefaultCSCodec struct {
 }
 
-func (c *DefaultCSCodec) Encode(header *csproto.CSHead, body proto.Message) ([]byte, error) {
+func (c *DefaultCSCodec) Encode(header *csproto.SCHead, body proto.Message) ([]byte, error) {
 	buff := make([]byte, _maxBuffSize)
 
 	data, err := proto.Marshal(header)
@@ -45,11 +45,11 @@ func (c *DefaultCSCodec) Encode(header *csproto.CSHead, body proto.Message) ([]b
 		return nil, err
 	}
 
-	headerSize := uint32(len(data))
-	binary.LittleEndian.PutUint32(buff[0:4], headerSize)
+	headerSize := len(data)
+	binary.LittleEndian.PutUint32(buff[0:4], uint32(headerSize))
 
 	n := copy(buff[4:], data)
-	if n != int(headerSize) {
+	if n != headerSize {
 		return nil, errors.New("buff copy failed")
 	}
 
@@ -63,7 +63,7 @@ func (c *DefaultCSCodec) Encode(header *csproto.CSHead, body proto.Message) ([]b
 		return nil, errors.New("buff copy failed")
 	}
 
-	return buff, nil
+	return buff[0 : 4+int(headerSize)+n], nil
 }
 
 func (c *DefaultCSCodec) Decode(data []byte) (*csproto.CSHead, proto.Message) {
@@ -72,6 +72,7 @@ func (c *DefaultCSCodec) Decode(data []byte) (*csproto.CSHead, proto.Message) {
 	headerSize := binary.LittleEndian.Uint32(data[0:4])
 	err := proto.Unmarshal(data[4:4+headerSize], &header)
 	if err != nil {
+		log.Error("proto unmarshal failed")
 		return nil, nil
 	}
 
@@ -82,15 +83,17 @@ func (c *DefaultCSCodec) Decode(data []byte) (*csproto.CSHead, proto.Message) {
 		return nil, nil
 	}
 
-	msgName := protoreflect.FullName(strings.ToUpper(msgStr))
+	msgName := protoreflect.FullName("proto." + strings.ToUpper(msgStr))
 	msgType, err := protoregistry.GlobalTypes.FindMessageByName(msgName)
 	if err != nil {
+		log.Error("find message by name %s failed, err %v", msgName, err)
 		return nil, nil
 	}
 
 	msg := msgType.New().Interface()
 	err = proto.Unmarshal(data[4+headerSize:], msg)
 	if err != nil {
+		log.Error("proto unmarshal failed")
 		return nil, nil
 	}
 

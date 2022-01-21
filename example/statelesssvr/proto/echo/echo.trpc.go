@@ -8,6 +8,7 @@ import (
 	"fmt"
 
 	_ "git.code.oa.com/trpc-go/trpc-go"
+	_ "git.code.oa.com/trpc-go/trpc-go/http"
 
 	"git.code.oa.com/trpc-go/trpc-go/client"
 	"git.code.oa.com/trpc-go/trpc-go/codec"

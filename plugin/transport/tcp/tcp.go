@@ -29,7 +29,7 @@ type tcpConn struct {
 }
 
 const (
-	_maxBufSize = 512000
+	_maxBufSize = 512 * 1024
 )
 
 func NewTcpConn(ctx context.Context, conn *net.TCPConn) *tcpConn {
@@ -75,6 +75,7 @@ func (c *tcpConn) Send(data []byte) error {
 
 	n, err := c.writer.Write(result)
 	if err != nil {
+		log.Error("writer write data_len %d failed for err %v", len(data), err)
 		return err
 	}
 
@@ -115,8 +116,7 @@ func (c *tcpConn) Read(targetBuff []byte) (int, error) {
 	for index < targetLen {
 		n, err := c.reader.Read(targetBuff[index:])
 		if err != nil {
-			return 0, nil
-
+			return 0, err
 		}
 
 		index += n
@@ -143,7 +143,7 @@ func (c *tcpConn) Recv() {
 
 		pkg, err := transport.GetCodec().Decode(c)
 		if err != nil {
-			log.Error("codec decode failed for %s", err.Error())
+			log.Info("codec decode failed for %s", err.Error())
 			return
 		}
 
@@ -217,6 +217,7 @@ func (t *TcpTransport) Init(o transport.Options) error {
 	}()
 
 	t.cancel = cancle
+	log.Info("tcp transport listen on: %s, serving ...", addr.String())
 
 	return nil
 }

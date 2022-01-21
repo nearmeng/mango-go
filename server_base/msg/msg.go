@@ -8,6 +8,7 @@ import (
 	"github.com/nearmeng/mango-go/plugin/transport"
 	"github.com/nearmeng/mango-go/proto/csproto"
 	"google.golang.org/protobuf/proto"
+	"google.golang.org/protobuf/runtime/protoimpl"
 )
 
 type ConnEventHandler func(conn transport.Conn)
@@ -80,9 +81,23 @@ func OnClientConnOpened(conn transport.Conn) {
 }
 
 func OnClientConnClosed(conn transport.Conn, active bool) {
-	log.Info("client disconnnect of connid %v", conn.GetConnID())
+	log.Info("client disconnnect of connid %v active %d", conn.GetConnID(), active)
 
 	msgHandlerMgr.connEventHandler[CONN_EVENT_STOP](conn)
+}
+
+func printCSMsg(header *csproto.CSHead, msg proto.Message) {
+	headerStr := protoimpl.X.MessageStringOf(header)
+	msgStr := protoimpl.X.MessageStringOf(msg)
+
+	log.Info("recv cs msg:\n %s\n %s", headerStr, msgStr)
+}
+
+func printSCMsg(header *csproto.SCHead, msg proto.Message) {
+	headerStr := protoimpl.X.MessageStringOf(header)
+	msgStr := protoimpl.X.MessageStringOf(msg)
+
+	log.Info("recv sc msg:\n %s\n %s", headerStr, msgStr)
 }
 
 func RecvClientMsg(conn transport.Conn, data []byte) {
@@ -91,6 +106,8 @@ func RecvClientMsg(conn transport.Conn, data []byte) {
 		log.Error("conn %v client msg decode failed", conn.GetConnID())
 		return
 	}
+
+	printCSMsg(header, msg)
 
 	h, ok := msgHandlerMgr.clientMsgHandler[header.GetMsgid()]
 	if !ok {
@@ -101,7 +118,7 @@ func RecvClientMsg(conn transport.Conn, data []byte) {
 	h(conn, header, msg)
 }
 
-func SendToClient(conn transport.Conn, header *csproto.CSHead, msg proto.Message) error {
+func SendToClient(conn transport.Conn, header *csproto.SCHead, msg proto.Message) error {
 	data, err := getCodec(CODEC_DEFAULT).Encode(header, msg)
 	if err != nil {
 		log.Error("conn %v client msg encode failed", conn.GetConnID())
@@ -113,6 +130,8 @@ func SendToClient(conn transport.Conn, header *csproto.CSHead, msg proto.Message
 		log.Error("conn %v client msg send failed", conn.GetConnID())
 		return err
 	}
+
+	printSCMsg(header, msg)
 
 	return nil
 }

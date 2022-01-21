@@ -2,12 +2,12 @@ syntax = "proto3";
 package proto;
 option go_package = "/csproto";
 
-message CSLogin
+message CS_LOGIN
 {
     string name     =   1;
 }
 
-message SCLogin
+message SC_LOGIN
 {
     int32 success  =   1;
 }

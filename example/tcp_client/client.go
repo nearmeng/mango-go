@@ -5,6 +5,9 @@ import (
 	"encoding/binary"
 	"fmt"
 	"net"
+
+	"github.com/nearmeng/mango-go/proto/csproto"
+	"google.golang.org/protobuf/proto"
 )
 
 /**
@@ -95,28 +98,71 @@ func main() {
 
 	conn, err := net.Dial("tcp", "127.0.0.1:8888")
 	if err != nil {
+		fmt.Printf("connect server failed")
 		return
 	}
 
 	defer conn.Close()
 
-	sendData := []byte(string("hello server"))
-	sendBuff := make([]byte, 8+len(sendData))
-	sendHeaderSize := len(sendData)
+	header := &csproto.CSHead{
+		Msgid: int32(csproto.CSMessageID_cs_login),
+		Seqid: 0,
+	}
+
+	msg := &csproto.CS_LOGIN{
+		Name: "test client",
+	}
+
+	//fmt.Printf("login full name %s\n", string(msg.ProtoReflect().Descriptor().FullName()))
+
+	sendHeaderData, err := proto.Marshal(header)
+	if err != nil {
+		fmt.Printf("marshal failed")
+		return
+	}
+
+	sendData, err := proto.Marshal(msg)
+	if err != nil {
+		fmt.Printf("marshal failed")
+		return
+	}
+
+	sendBuff := make([]byte, 8+len(sendHeaderData)+len(sendData))
+	sendHeaderSize := len(sendHeaderData)
+	sendBodySize := len(sendData)
 
 	binary.LittleEndian.PutUint32(sendBuff[0:4], uint32(sendHeaderSize))
-	binary.LittleEndian.PutUint32(sendBuff[4:8], 0)
+	binary.LittleEndian.PutUint32(sendBuff[4:8], uint32(sendBodySize))
 	//_ = append(sendBuff[8:], sendData...)
-	copy(sendBuff[8:], sendData)
+	copy(sendBuff[8:], sendHeaderData)
+	copy(sendBuff[8+sendHeaderSize:], sendData)
 
-	fmt.Printf("send header_size %d body_size %d buff_len %d str %s\n", binary.LittleEndian.Uint32(sendBuff), binary.LittleEndian.Uint32(sendBuff[4:8]), len(sendBuff), string(sendBuff[8:]))
+	fmt.Printf("send header_size %d body_size %d\n", sendHeaderSize, sendBodySize)
 
 	conn.Write(sendBuff)
 
 	recvBuff := [512]byte{}
 	n, _ := conn.Read(recvBuff[:])
 
-	headerSize := binary.LittleEndian.Uint32(recvBuff[0:4])
-	bodySize := binary.LittleEndian.Uint32(recvBuff[4:8])
-	fmt.Printf("recv data from server header_size %d body_size %d read_len %d str %s\n", headerSize, bodySize, n, string(recvBuff[8:]))
+	recvHeaderSize := binary.LittleEndian.Uint32(recvBuff[0:4])
+	recvBodySize := binary.LittleEndian.Uint32(recvBuff[4:8])
+
+	recvHeader := &csproto.SCHead{}
+	err = proto.Unmarshal(recvBuff[8:8+recvHeaderSize], recvHeader)
+	if err != nil {
+		fmt.Printf("unmarshal failed")
+		return
+	}
+
+	recvMsg := &csproto.SC_LOGIN{}
+	err = proto.Unmarshal(recvBuff[8+recvHeaderSize:8+recvHeaderSize+recvBodySize], recvMsg)
+	if err != nil {
+		fmt.Printf("unmarshal failed")
+		return
+	}
+
+	fmt.Printf("recv data from server header_size %d body_size %d read_len %d\n", recvHeaderSize, recvBodySize, n)
+	fmt.Printf("header msgid %d seqid %d\n", recvHeader.Msgid, recvHeader.Seqid)
+	fmt.Printf("msg sc login success %d\n", recvMsg.Success)
+
 }
