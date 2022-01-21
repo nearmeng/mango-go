@@ -106,11 +106,16 @@ func main() {
 
 	header := &csproto.CSHead{
 		Msgid: int32(csproto.CSMessageID_cs_login),
-		Seqid: 0,
+		Seqid: 1,
 	}
 
 	msg := &csproto.CS_LOGIN{
 		Name: "test client",
+		Sex:  "male",
+		Account: &csproto.Account{
+			Id:  100,
+			Num: 10,
+		},
 	}
 
 	//fmt.Printf("login full name %s\n", string(msg.ProtoReflect().Descriptor().FullName()))

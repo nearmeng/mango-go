@@ -2,13 +2,14 @@ package msg
 
 import (
 	"errors"
+	"strings"
 	"sync"
 
 	"github.com/nearmeng/mango-go/plugin/log"
 	"github.com/nearmeng/mango-go/plugin/transport"
 	"github.com/nearmeng/mango-go/proto/csproto"
+	"google.golang.org/protobuf/encoding/prototext"
 	"google.golang.org/protobuf/proto"
-	"google.golang.org/protobuf/runtime/protoimpl"
 )
 
 type ConnEventHandler func(conn transport.Conn)
@@ -86,18 +87,22 @@ func OnClientConnClosed(conn transport.Conn, active bool) {
 	msgHandlerMgr.connEventHandler[CONN_EVENT_STOP](conn)
 }
 
-func printCSMsg(header *csproto.CSHead, msg proto.Message) {
-	headerStr := protoimpl.X.MessageStringOf(header)
-	msgStr := protoimpl.X.MessageStringOf(msg)
+func PrintReadableStr(msg proto.Message) string {
+	marshalStr := prototext.MarshalOptions{Indent: "\t"}.Format(msg)
+	fixedStr := strings.Replace(marshalStr, "\n", "\n  ", -1)
+	fixedStr = strings.TrimRight(fixedStr, " ")
 
-	log.Info("recv cs msg:\n %s\n %s", headerStr, msgStr)
+	return "  " + fixedStr
+}
+
+func printCSMsg(header *csproto.CSHead, msg proto.Message) {
+	log.Info("recv cs msg:\nCS_HEAD {\n%s}\n%s {\n%s}", PrintReadableStr(header),
+		msg.ProtoReflect().Descriptor().Name(), PrintReadableStr(msg))
 }
 
 func printSCMsg(header *csproto.SCHead, msg proto.Message) {
-	headerStr := protoimpl.X.MessageStringOf(header)
-	msgStr := protoimpl.X.MessageStringOf(msg)
-
-	log.Info("recv sc msg:\n %s\n %s", headerStr, msgStr)
+	log.Info("send sc msg:\nSC_HEAD {\n%s}\n%s {\n%s}", PrintReadableStr(header),
+		msg.ProtoReflect().Descriptor().Name(), PrintReadableStr(msg))
 }
 
 func RecvClientMsg(conn transport.Conn, data []byte) {
